@@ -12,20 +12,27 @@ Here's the answers for the 1st challenge of Grokking Engineering's techincal mar
 ## Question 1 (10pts)
 Explain how HTTPS is more secure than HTTP?
 
-#### Answers
-```
+#### Proposed Answer
 There's two main reasons:
 
-# Encryption: 
+- *Encryption*
 HTTP request are now made within a secure connection (encrypted via TLS/SSL).
 Thus the data exchanged is not visible during man-in-the-middle attacks.
 
-# Trust establishment:
-Web browsers know how to trust HTTPS websites if they can provide a valid certificate
-(signed by trusted certificates authority) and the cert correctly identifies the website
-(e.g., when the browser visits "https://example.com", 
-the received certificate is properly for "example.com" and not some other entity)
-```
+- *Trust establishment*
+Web browsers know how to trust HTTPS websites if they can provide a valid
+certificate (signed by trusted certificate authorities) and the cert correctly
+identifies the website (e.g., when the browser visits "https://example.com", 
+the received certificate is properly for "example.com" and not some other
+entity)
+
+#### Marking criteria
+|                   Criteria                                 |     Points      |
+|:-----------------------------------------------------------|----------------:|
+| Mention one (1) reason correctly                           |               5 |
+| Mention two (2) reasons correctly                          |              10 |
+| From the 3rd correct reason onward, no point is given      |               0 |
+| From the 3rd reason onward, penalty for wrong explanation  |              -1 |
 
 ****
 
@@ -128,7 +135,8 @@ we decided to look them up and explain what we think about them:
 
 ## Question 3 (10pts)
 
-What can you do to get apples for free from the following (poorly written) ecommerce service.
+What can you do to get apples for free from the following (poorly written)
+ecommerce service.
 
 ```html
 <!DOCTYPE html>
@@ -166,25 +174,35 @@ def purchase(request):
    return HttpResponse('Enjoy your apples!')
 ```
 
-#### Answers
+#### Proposed Answer
+If you read the code carefully, you'll notice that the amount deducted from the
+user's balance is equal to the value of the `total` key in the POST request
+body. The value of `total` is taken from the value of the hidden form element
+with ID `total`, which is update every time the user change the amount of apples
+in the `quantity` input element. Furthermore, there are no checks if the value
+of `total` matches the `quantity` ordered on the server. Armed with this
+knowledge, it is straightforward to construct a solution.
 
-```
-If you notice, how the purchase function is written, 
-you will see a loop hole there:
+Posible solutions:
 
-the user balance is deducted the amount equal to that of
-the "total" key in the request's body
+- Modify the value of `total` form element before clicking on `Submit` via the
+JavaScript console available in most modern browsers. This solution is easier as
+it is very probable that the server checks for user session via a secure cookie.
+The request sent from the browser automatically includes this cookie.
 
-There is no check-sum for the data, 
-which means if you send a total of 0, no money will be deducted.
-Hence, all you need to do is modify the value of 'total'
-in the HTML before clicking "submit".
+- Alternatively, you can construct the request yourself with the help of the
+`cURL` program or any HTTP library available to your favorite language. The
+request's body has to include the `total` and `quantity` keys with desired
+values (did you think of assigning a negative value to `total`? Free money!).
+However, you'll also need to include the session sercure cookie, which you can
+sniff for with networking tools like `ngrep` or the more convenient Network
+tab in most modern browser's Developer Tools.
 
-Alteratively, you can also send your own POST request
-based on the schema here. You can probably see the exact headers
-and any other info required for the request using some tools
-like `ngrep`, or see it from the browser's developer tools (Network tab)
-```
+#### Marking criteria
+|                        Criteria                                  |   Points  |
+|:-----------------------------------------------------------------|----------:|
+| Proposing 1 correct solution                                     |         5 |
+| Proposing more than 1 correct solutions                          |         8 |
 
 ****
 
