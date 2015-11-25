@@ -287,7 +287,7 @@ tab in most modern browser's Developer Tools.
 
 Describe in as much detail as possible how an SQL query is executed, from the time it is entered into the console to the time the output is printed out.
 
-### Answers
+### Proposed answers
 
 ```
 In general, there will be four steps to execute a query:
@@ -318,11 +318,15 @@ And this is for MySQL:
 http://adminlinux.blogspot.sg/2009/06/mysql-query-execution-basics.html
 ```
 
+A lot of answers goes into details of these steps (too many, so we can't list them out here), as well as steps before and after it. Some details are specific to certain RDBMS, too.
+
+We will try to see if you have covered thesre 4 steps, or is missing something, and give score based on that
+
 ### Marking criteria
 |                        Criteria                                  |   Points  |
 |:-----------------------------------------------------------------|----------:|
-| Metion all 4 steps                                               |         5 |
-| Missing 1 (or many steps)                                        |       10 |
+| Metion all 4 steps                                               |        30 |
+| Missing each steps                                               |        -2 |
 
 
 ****
