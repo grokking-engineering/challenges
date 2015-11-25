@@ -63,15 +63,63 @@ What would you do to improve the performance of the query (make it run faster), 
 #### Answers
 
 ```
+# Major improvement
 Reading what EXPLAIN returned, you can see that the queries triggered 
 a sequencial scan on the entire table to get the results.
 This is has O(n) complexity (w.r.t the number of entries).
 
-Thus, one way NOT to do O(N) scan is to create indexes on 
+Thus, imporving the performance means NOT doing O(N) scan 
+is to create indexes on the columns:
 user_id, item_id, referrer_name, created_at, updated_at columns.
+
+The benefit of indexes will really show for user_id, item_id, created_at, updated_at,
+because these have high-cardinality (more different values).
+Index 's benefit won't be significant for referrer_name,
+as it have many similar values.
 
 Usually, the indexes are created using btree,
 which would yield O(log N) search complexity.
+
+
+# Other improvements / valid points
+We have noticed that there're other interesting answers.
+
+As Grokking Team are by no means PostgreSQL guru (you guys seems to know much more),
+we decided to look them up and explain what we think about them:
+
+### type casting solution, i.e: "not casting the date" or "convert the NUMERIC type to BIGINT"
+    
+    These are valid points, but as some datatypes / casting operations takes extra
+    CPU cycles. However, their performance cost is likely smaller compared to the index.
+    These are not counted as valid answers
+    
+###  sharing solution, i.e "shard the table by date when it's too big"
+    This is also a VERY good point, if you have already tried all other optimization.
+    In this case, however, we haven't started with the lowest hanging fruit: index.
+    These are not counted as valid answers
+
+### Use different index type, i.e Hash index, GIST index)
+    Wow, we didn't know much about this, so we looked it.
+    It turns out that while Hash index is indeed faster, it also have some problems,
+    like not being WAL-logged (during replication).
+    See http://www.depesz.com/2010/06/28/should-you-use-hash-index/
+    
+    GIST index, on the other hand, provides a variety of indexing strategies based on
+    your scenario.
+    See http://www.postgresql.org/docs/current/static/indexes-types.html
+    
+    These are wonderful optimization on top of the standard b-tree indexes.
+    Hence, we count themas valid answers
+    
+### Use compound index
+
+### Move referrer name to new table, add foreign key
+
+### Not using SELECT *
+
+### Using UNION
+
+### Using OR instead of IN
 ```
 
 ## Question 3 (10pts)
