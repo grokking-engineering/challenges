@@ -192,7 +192,7 @@ The request sent from the browser automatically includes this cookie.
 `cURL` program or any HTTP library available to your favorite language. The
 request's body has to include the `total` and `quantity` keys with desired
 values (did you think of assigning a negative value to `total`? Free money!).
-However, you'll also need to include the session sercure cookie, which you can
+However, you'll also need to include the session secure cookie which you can
 sniff for with networking tools like `ngrep` or the more convenient Network
 tab in most modern browser's Developer Tools.
 
