@@ -156,13 +156,11 @@ ecommerce service.
     </script>
   </body>
 </html>
-
-
 ```
 
 ```python
-# backend
 #!/usr/bin/python3
+# backend
 
 ## the purchase request will get routed to this function
 def purchase(request):
@@ -202,7 +200,7 @@ tab in most modern browser's Developer Tools.
 |                        Criteria                                  |   Points  |
 |:-----------------------------------------------------------------|----------:|
 | Proposing 1 correct solution                                     |         5 |
-| Proposing more than 1 correct solutions                          |         8 |
+| Proposing more than 1 correct solutions                          |        10 |
 
 ****
 
