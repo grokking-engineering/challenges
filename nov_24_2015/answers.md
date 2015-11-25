@@ -2,7 +2,7 @@ Hi there,
 
 Here's the answers for the 1st challenge of Grokking Engineering's techincal marathon.
 
-## Questions & feedbacks:
+## Feedback:
 - If you spot any major problems in the answers, do tell us at <admin@grokkingengineering.org>. We will take that into considerations and update the answers if needed.
 
 ****
@@ -71,8 +71,7 @@ What would you do to improve the performance of the query (make it run faster), 
 
 #### Answers
 
-```
-# Major improvement
+##### Major improvement
 Reading what EXPLAIN returned, you can see that the queries triggered 
 a sequencial scan on the entire table to get the results.
 This is has O(n) complexity (w.r.t the number of entries).
@@ -90,48 +89,45 @@ Usually, the indexes are created using btree,
 which would yield O(log N) search complexity.
 
 
-# Other improvements / valid points
+##### Other improvements / valid points
 We have noticed that there're other interesting answers.
 
 As Grokking Team are by no means PostgreSQL guru (you guys seems to know much more),
 we decided to look them up and explain what we think about them:
 
-### type casting solution, i.e: "not casting the date" or "convert the NUMERIC type to BIGINT"
+*Type casting solution, i.e: "not casting the date" or "convert the NUMERIC type to BIGINT"*
+
+These are valid points, but as some datatypes / casting operations takes extra 
+CPU cycles. However, their performance cost is likely smaller compared to the index.
+These are not counted as valid answers
     
-    These are valid points, but as some datatypes / casting operations takes extra
-    CPU cycles. However, their performance cost is likely smaller compared to the index.
-    These are not counted as valid answers
+*Sharing solution, i.e "shard the table by date when it's too big"*
+This is also a VERY good point, if you have already tried all other optimization.
+In this case, however, we haven't started with the lowest hanging fruit: index.
+These are not counted as valid answers
+
+*Use different index type, i.e Hash index, GIST index)*
+
+Wow, we didn't know much about this, so we looked it.
+It turns out that while Hash index is indeed faster, it also have some problems,
+like not being WAL-logged (during replication).
+See http://www.depesz.com/2010/06/28/should-you-use-hash-index/
     
-###  sharing solution, i.e "shard the table by date when it's too big"
-    This is also a VERY good point, if you have already tried all other optimization.
-    In this case, however, we haven't started with the lowest hanging fruit: index.
-    These are not counted as valid answers
-
-### Use different index type, i.e Hash index, GIST index)
-    Wow, we didn't know much about this, so we looked it.
-    It turns out that while Hash index is indeed faster, it also have some problems,
-    like not being WAL-logged (during replication).
-    See http://www.depesz.com/2010/06/28/should-you-use-hash-index/
+GIST index, on the other hand, provides a variety of indexing strategies based on your scenario.
+See http://www.postgresql.org/docs/current/static/indexes-types.html
     
-    GIST index, on the other hand, provides a variety of indexing strategies based on
-    your scenario.
-    See http://www.postgresql.org/docs/current/static/indexes-types.html
+These are wonderful optimization on top of the standard b-tree indexes. Hence, we count themas valid answers
     
-    These are wonderful optimization on top of the standard b-tree indexes.
-    Hence, we count themas valid answers
-    
-### Use compound index
+*Use compound index*
 
-### Move referrer name to new table, add foreign key
+*Move referrer name to new table, add foreign key*
 
-### Not using SELECT *
+*Not using SELECT*
 
-### Using UNION
+*Using UNION*
 
-### Using OR instead of IN
-```
+*Using OR instead of IN*
 
-****
 
 ## Question 3 (10pts)
 
