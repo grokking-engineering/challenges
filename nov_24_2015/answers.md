@@ -27,6 +27,8 @@ Web browsers know how to trust HTTPS websites if they can provide a valid certif
 the received certificate is properly for "example.com" and not some other entity)
 ```
 
+****
+
 ## Question 2 (10pts)
 
 You have a table with the following structure
@@ -122,6 +124,8 @@ we decided to look them up and explain what we think about them:
 ### Using OR instead of IN
 ```
 
+****
+
 ## Question 3 (10pts)
 
 What can you do to get apples for free from the following (poorly written) ecommerce service.
@@ -182,6 +186,8 @@ and any other info required for the request using some tools
 like `ngrep`, or see it from the browser's developer tools (Network tab)
 ```
 
+****
+
 ## Question 4: (30pts)
 
 Describe in as much detail as possible how an SQL query is executed, from the time it is entered into the console to the time the output is printed out.
@@ -216,6 +222,8 @@ http://patshaughnessy.net/2014/10/13/following-a-select-statement-through-postgr
 And this is for MySQL:
 http://adminlinux.blogspot.sg/2009/06/mysql-query-execution-basics.html
 ```
+
+****
 
 ## Question 5: (30pts)
 
