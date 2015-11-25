@@ -253,6 +253,7 @@ def purchase(request):
 ```
 
 ### Proposed answer
+
 If you read the code carefully, you'll notice that the amount deducted from the
 user's balance is equal to the value of the `total` key in the POST request
 body. The value of `total` is taken from the value of the hidden form element
@@ -379,9 +380,8 @@ Because as the source code gets smaller, it’s harder to weave off bytes, the s
 | Correct, 10 <= source code's length < 15 bytes  | 25    |
 | Correct, <= 10 bytes                            | 30    |
 
-### Answers
+### Proposed answers
 
-```
 Since Unicode, system time & external sources are not allowed,
 you will need to do some aritmethic.
 
@@ -392,14 +392,7 @@ This is easy, to do, but usually results in longer code
 
 For example,
 
+```ruby
 #!/usr/env/ruby
-------------------------------------------------------------------
-| ('bab'.to_i ?\r.ord) + ('q'.to_i ?\e.ord) - ('a'.to_i ?\r.ord) |
-------------------------------------------------------------------
-
-Explaination:
-`?\r`     returns the character "\r" in ASCII (Carriage Return).
-`?\r.ord`     returns 13 (ASCII code of "\r")
-`'BC1'.to_i ?\r.ord`  convert "BC1" (2016 in base 13) to decimal
+('bab'.to_i ?\r.ord) + ('q'.to_i ?\e.ord) - ('a'.to_i ?\r.ord)
 ```
-
