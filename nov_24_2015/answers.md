@@ -7,26 +7,20 @@ Here's the answers for the 1st challenge of Grokking Engineering's techincal mar
 
 ****
 
-# Questions
+# Q1 (10 pts): Explain how HTTPS is more secure than HTTP?
 
-## Question 1 (10pts)
-Explain how HTTPS is more secure than HTTP?
-
-#### Proposed Answer
+### Proposed answer
 There's two main reasons:
 
-- *Encryption*
+- __Encryption__:
 HTTP request are now made within a secure connection (encrypted via TLS/SSL).
 Thus the data exchanged is not visible during man-in-the-middle attacks.
-
-- *Trust establishment*
-Web browsers know how to trust HTTPS websites if they can provide a valid
+- __Trust establishment__:
+Web browsers can trust HTTPS websites if they can provide a valid
 certificate (signed by trusted certificate authorities) and the cert correctly
-identifies the website (e.g., when the browser visits "https://example.com", 
-the received certificate is properly for "example.com" and not some other
-entity)
+identifies the website (i.e., when the browser visits https://example.com, it sees a valid certificate for example.com and not some other domain)
 
-#### Marking criteria
+### Marking criteria
 |                   Criteria                                 |     Points      |
 |:-----------------------------------------------------------|----------------:|
 | Mention one (1) reason correctly                           |               5 |
@@ -36,7 +30,7 @@ entity)
 
 ****
 
-## Question 2 (10pts)
+# Q2 (10pts): Improve query performance
 
 You have a table with the following structure
 
@@ -69,65 +63,155 @@ Seq Scan on user_purchases  (cost=0.00..3482332.76 rows=1 width=596)
 
 What would you do to improve the performance of the query (make it run faster), __independent__ of the server's infrastructure (CPU, memory, disk, etc)?
 
-#### Answers
+### Proposed answer
 
 ##### Major improvement
 Reading what EXPLAIN returned, you can see that the queries triggered 
 a sequencial scan on the entire table to get the results.
 This is has O(n) complexity (w.r.t the number of entries).
-
-Thus, imporving the performance means NOT doing O(N) scan 
-is to create indexes on the columns:
+Thus, the most effective way to improve the performance is NOT doing O(n) scan,
+achieved by creating indexes on the columns:
 user_id, item_id, referrer_name, created_at, updated_at columns.
 
 The benefit of indexes will really show for user_id, item_id, created_at, updated_at,
 because these have high-cardinality (more different values).
-Index 's benefit won't be significant for referrer_name,
-as it have many similar values.
+Index 's benefit won't be significant for referrer_name, as it have many similar values.
 
-Usually, the indexes are created using btree,
-which would yield O(log N) search complexity.
+Usually, the indexes are created using btree, which would yield O(log n) search complexity.
 
 
-##### Other improvements / valid points
+##### Other improvements
 We have noticed that there're other interesting answers.
-
 As Grokking Team are by no means PostgreSQL guru (you guys seems to know much more),
 we decided to look them up and explain what we think about them:
 
-*Type casting solution, i.e: "not casting the date" or "convert the NUMERIC type to BIGINT"*
+__Changing column to use different types, i.e: "don't cast the date" or "convert the NUMERIC type to BIGINT", etc__
 
-These are valid points, but as some datatypes / casting operations takes extra 
-CPU cycles. However, their performance cost is likely smaller compared to the index.
-These are not counted as valid answers
+It's true that some datatypes / casting operations takes extra CPU cycles.
+However, the performance improvement gained from that is likely much smaller
+compared that of adding index.
+
+=> These are not counted as valid answers
     
-*Sharing solution, i.e "shard the table by date when it's too big"*
-This is also a VERY good point, if you have already tried all other optimization.
+__Shard the table, i.e "shard the table by date when it's too big"__
+
+This is a VERY good point, if you have ALREADY tried all other optimization.
 In this case, however, we haven't started with the lowest hanging fruit: index.
-These are not counted as valid answers
 
-*Use different index type, i.e Hash index, GIST index)*
+=> These are not counted as valid answers
 
-Wow, we didn't know much about this, so we looked it.
+__Use different index type, i.e Hash index, GIST index__
+
+Wow, we didn't know much about this, so we looked it up.
 It turns out that while Hash index is indeed faster, it also have some problems,
 like not being WAL-logged (during replication).
 See http://www.depesz.com/2010/06/28/should-you-use-hash-index/
     
-GIST index, on the other hand, provides a variety of indexing strategies based on your scenario.
+GIST index, on the other hand, provides a variety of indexing strategies based on your scenario. If you have a specialize requirement here, it will probably work
 See http://www.postgresql.org/docs/current/static/indexes-types.html
     
-These are wonderful optimization on top of the standard b-tree indexes. Hence, we count themas valid answers
+Depending on the situation, these can be great optimization on top of the standard b-tree indexes.
+
+=> Because does involve indexing, we will take it as valid answers
     
-*Use compound index*
+__Use compound index, i.e: CREATE INDEX ON user_purchases (referrer_name, user_id, created_at)__
 
-*Move referrer name to new table, add foreign key*
+Postgres has this rule for multi-column indexes:
 
-*Not using SELECT*
+A single index scan can only use query clauses that use the index's columns with operators of its operator class and are joined with AND. For example, given an index on (a, b) a query condition like WHERE a = 5 AND b = 6 could use the index, but a query like WHERE a = 5 OR b = 6 could not directly use the index.
 
-*Using UNION*
+Assuming we run the same query in the example (only with AND & the 3 columns), your answers is only correct when you mention at least those 3 columns (user_id, referrer_name, created_at) in the compound index
 
-*Using OR instead of IN*
+=> We will take it as a valid answers if you don't conflict with the PostgreSQL rule above
 
+__Move referrer name to new table, add foreign key__
+
+We have some answers that try to move referrer_name to a new table and put foreign key constraint on it, similar to
+
+```
+CREATE TABLE referrers (
+    id SERIAL NOT NULL PRIMARY KEY,
+    name VARCHAR(255)
+);
+CREATE TABLE user_purchases (
+    user_id INT,
+    item_id INT,
+    referrer_id INT NOT NULL REFERENCES referrers(id),
+    created_at DATE DEFAULT CURRENT_DATE,
+    updated_at DATE DEFAULT CURRENT_DATE
+);
+EXPLAIN SELECT * FROM user_purchases WHERE user_id = 234 AND referrer_id = 123 AND created_at > '2016-11-11'::date;
+                                        QUERY PLAN                                         
+-------------------------------------------------------------------------------------------
+ Seq Scan on user_purchases  (cost=0.00..38.53 rows=1 width=20)
+   Filter: ((created_at > '2016-11-11'::date) AND (user_id = 234) AND (referrer_id = 123))
+```
+
+See the result of EXPLAIN. You are essentially running sequencial anyway, so no improvement
+
+=> Not accepted as valid answers
+ 
+__Not using SELECT * and specify column__
+
+It's also true that SELECT * need to read more bytes than only chossing the fields you need, but the cost is still much smaller compared to the improvement of index
+
+=> This is not accepted as a valid answer
+
+__Using UNION__
+
+One team tried to run this query
+
+```
+EXPLAIN SELECT * FROM user_purchases 
+WHERE user_id=123 AND referrer_name = 'amazon' AND created_at >= date('2015-07-01') AND created_at < date('2015-08-01')
+UNION
+SELECT * FROM user_purchases 
+WHERE user_id= 456 AND referrer_name = 'amazon' AND created_at >= date('2015-07-01') AND created_at < date('2015-08-01')
+UNION
+SELECT * FROM user_purchases 
+WHERE user_id=789 AND referrer_name = 'amazon' AND created_at >= date('2015-07-01') AND created_at < date('2015-08-01');
+
+ HashAggregate  (cost=37.87..37.90 rows=3 width=596)
+   ->  Append  (cost=0.00..37.83 rows=3 width=596)
+         ->  Seq Scan on user_purchases  (cost=0.00..12.60 rows=1 width=596)
+               Filter: ((created_at >= '2015-07-01'::date) AND (created_at < '2015-08-01'::date) AND (user_id = 123::numeric) AND ((referrer_name)::text = 'amazon'::text))
+         ->  Seq Scan on user_purchases user_purchases_1  (cost=0.00..12.60 rows=1 width=596)
+               Filter: ((created_at >= '2015-07-01'::date) AND (created_at < '2015-08-01'::date) AND (user_id = 456::numeric) AND ((referrer_name)::text = 'amazon'::text))
+         ->  Seq Scan on user_purchases user_purchases_2  (cost=0.00..12.60 rows=1 width=596)
+               Filter: ((created_at >= '2015-07-01'::date) AND (created_at < '2015-08-01'::date) AND (user_id = 789::numeric) AND ((referrer_name)::text = 'amazon'::text))
+```
+
+This is, uhm, much worse, as you have to do sequencial scan 3 times
+
+__Using OR instead of IN()__
+
+```
+EXPLAIN SELECT item_id, user_id FROM user_purchases WHERE user_id = 234 OR user_id = 123 AND referrer_name = 'abc' AND created_at > '2016-11-11'::date;
+                                                                     QUERY PLAN                                                                     
+----------------------------------------------------------------------------------------------------------------------------------------------------
+ Seq Scan on user_purchases  (cost=0.00..12.60 rows=1 width=64)
+   Filter: ((user_id = 234::numeric) OR ((user_id = 123::numeric) AND ((referrer_name)::text = 'abc'::text) AND (created_at > '2016-11-11'::date)))
+(2 rows)
+
+EXPLAIN SELECT item_id, user_id FROM user_purchases WHERE user_id IN (123, 234)AND referrer_name = 'abc' AND created_at > '2016-11-11'::date;
+                                                              QUERY PLAN                                                              
+--------------------------------------------------------------------------------------------------------------------------------------
+ Seq Scan on user_purchases  (cost=0.00..12.28 rows=1 width=64)
+   Filter: ((user_id = ANY ('{123,234}'::numeric[])) AND (created_at > '2016-11-11'::date) AND ((referrer_name)::text = 'abc'::text))
+```
+
+There is no significant differneces here
+
+=> This is not a valid answer
+
+### Marking criteria
+|                   Criteria                                        |     Points                              |
+|:------------------------------------------------------------------|----------------------------------------:|
+| Mention creating index correctly and create index on the 3 columns|               9                         |
+| Mention any extra reasons and it's correct                        |  +1 (cap at 10)                         |
+| Mention any incorrect fact after talking about the index          |  -1 (deduce once for all wrong answers)
+
+****
 
 ## Question 3 (10pts)
 
@@ -168,7 +252,7 @@ def purchase(request):
    return HttpResponse('Enjoy your apples!')
 ```
 
-#### Proposed Answer
+### Proposed answer
 If you read the code carefully, you'll notice that the amount deducted from the
 user's balance is equal to the value of the `total` key in the POST request
 body. The value of `total` is taken from the value of the hidden form element
@@ -183,7 +267,6 @@ Posible solutions:
 JavaScript console available in most modern browsers. This solution is easier as
 it is very probable that the server checks for user session via a secure cookie.
 The request sent from the browser automatically includes this cookie.
-
 - Alternatively, you can construct the request yourself with the help of the
 `cURL` program or any HTTP library available to your favorite language. The
 request's body has to include the `total` and `quantity` keys with desired
@@ -192,7 +275,7 @@ However, you'll also need to include the session secure cookie which you can
 sniff for with networking tools like `ngrep` or the more convenient Network
 tab in most modern browser's Developer Tools.
 
-#### Marking criteria
+### Marking criteria
 |                        Criteria                                  |   Points  |
 |:-----------------------------------------------------------------|----------:|
 | Proposing 1 correct solution                                     |         5 |
@@ -204,7 +287,7 @@ tab in most modern browser's Developer Tools.
 
 Describe in as much detail as possible how an SQL query is executed, from the time it is entered into the console to the time the output is printed out.
 
-#### Answers
+### Answers
 
 ```
 In general, there will be four steps to execute a query:
@@ -234,6 +317,13 @@ http://patshaughnessy.net/2014/10/13/following-a-select-statement-through-postgr
 And this is for MySQL:
 http://adminlinux.blogspot.sg/2009/06/mysql-query-execution-basics.html
 ```
+
+### Marking criteria
+|                        Criteria                                  |   Points  |
+|:-----------------------------------------------------------------|----------:|
+| Metion all 4 steps                                               |         5 |
+| Missing 1 (or many steps)                                        |       10 |
+
 
 ****
 
