@@ -207,8 +207,8 @@ There is no significant differneces here
 ### Marking criteria
 |                   Criteria                                        |     Points                              |
 |:------------------------------------------------------------------|----------------------------------------:|
-| Mention creating index correctly and create index on the 3 columns|               8                         |
-| Mention any extra reasons and it's correct                        |  +1 (cap at 10)                         |
+| Mention creating index correctly and create index on the 3 columns|               10                        |
+| Mention any equivalent reasons and it's correct                   |  count as valid answer                  |
 | Mention any incorrect fact after talking about the index          |  -1 per wrong answers                   |
 
 ****
