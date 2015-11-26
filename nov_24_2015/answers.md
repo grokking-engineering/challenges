@@ -290,24 +290,23 @@ Describe in as much detail as possible how an SQL query is executed, from the ti
 
 ### Proposed answers
 
-```
 In general, there will be four steps to execute a query:
 
-# Parse:
+##### Parse
 Here our SQL statement is converted into a structure.
 For example, in Postgres, this will be a parse tree (in C)
 
-# Analyze & rewrite:
+##### Analyze, rewrite and plan:
 Here, the SQL server analyzes and rewrites our query,
 optimizing and simplifying it using a series of complex algorithms
 
-# Plan:
 Next, a plan for finding our data will be generated.
 Like an obsessive compulsive person who won’t leave home
 without every suitcase packed perfectly,
 the RDBMS doesn’t run our query until it has a plan
+(note, this can happen at the same stage with Analyze and rewrite)
 
-# Execute:
+##### Execute:
 Finally, our query will be executed.
 
 The details will be different based on the RDBMS's implementation. 
@@ -317,11 +316,8 @@ http://patshaughnessy.net/2014/10/13/following-a-select-statement-through-postgr
 
 And this is for MySQL:
 http://adminlinux.blogspot.sg/2009/06/mysql-query-execution-basics.html
-```
 
-A lot of answers goes into details of these steps (too many, so we can't list them out here), as well as steps before and after it. Some details are specific to certain RDBMS, too.
-
-We will try to see if you have covered thesre 4 steps, or is missing something, and give score based on that
+We will try to see if you have covered these steps, or is missing something, and give score based on that
 
 ### Marking criteria
 |                        Criteria                                  |   Points  |
