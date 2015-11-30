@@ -11,54 +11,54 @@
 //		- The data written is on the right of the ':'
 //	- When we test your program, we expect it to terminates when the game end
 //		e.g, when you receive either TIMEOUT or CORRECT
-//	- After you have writter the guesses to stdout, flush your output buffer
+//	- After you have written the guesses to stdout, flush your output buffer
 //		so we can read it
 //
 // convention
 // ----------------------------------------------------
 // colors are indicated using 1 ASCII character, as followed:
-// 	- Red: 		R
-// 	- Green: 	G
-// 	- Blue: 	U
-// 	- Yellow: Y
-// 	- Black: 	B
-// 	- White: 	W
+// 	- Red:       R
+// 	- Green:     G
+// 	- Blue:      U
+// 	- Yellow:    Y
+// 	- Black:     B
+// 	- White:     W
 //
 // input/output
 // ----------------------------------------------------
-// 	- >:START\n						// indicate new game
-//  - <:RRRR\n						// solver make a first guess
-//	- >:0 1 2 CONTINUE\n	// driver returns the following 4 things:
-//												// 		<turn no>
-//												//		<no of spot matching color & position (1)>
-//												//		<no of spot matching color ONLY, excluding (1)>
-//												// 		<a state>, where
-//												//			CONTINUE indicate you can make another guess
-//												// 			CORRECT indicate you have guessed correctly
-//												//			TIMEOUT indicate you didn't find the answer
+//  - >:START\n                 // indicate new game
+//  - <:RRRR\n                  // solver make a first guess
+//  - >:0 1 2 CONTINUE\n        // driver returns the following 4 things:
+//                              //   <turn no>
+//                              //   <no of spot matching color & position (1)>
+//                              //   <no of spot matching color ONLY, excluding (1)>
+//                              //   <a state>, where
+//                              //      CONTINUE indicate you can make another guess
+//                              //      CORRECT indicate you have guessed correctly
+//                              //      TIMEOUT indicate you didn't find the answer
 //
 // example: let's say the code is RWBY
 // ----------------------------------------------------
 // >:START\n
 // <:RRRR\n
-// >:1 1 0 CONTINUE\n			// 1st spot matched
+// >:1 1 0 CONTINUE\n           // 1st spot matched
 // <:RBBB\n
-// >:2 2 0 CONTINUE\n     // 1st & 3rd spot matched
+// >:2 2 0 CONTINUE\n           // 1st & 3rd spot matched
 // <:RBWW\n
-// >:3 1 2 CONTINUE\n			// 1st spot matched, 2nd & 3rd are in wrong position
+// >:3 1 2 CONTINUE\n           // 1st spot matched, 2nd & 3rd are in wrong position
 // <:RWBB\n
-// >:4 3 0 CONTINUE\n     // 1st, 2nd & 3rd matched
+// >:4 3 0 CONTINUE\n           // 1st, 2nd & 3rd matched
 // <:RWBY\n
-// >:5 4 0 CORRECT\n      // all matched
+// >:5 4 0 CORRECT\n            // all matched
 //
 //
 // the same game might exceed 10 turns, in which case we return a TIMEOUT
 //
 // ... some other steps ..
 // <:RWBB\n
-// >:9 3 0 CONTINUE\n			// 1st, 2nd & 3rd matched
+// >:9 3 0 CONTINUE\n           // 1st, 2nd & 3rd matched
 // <:RWBU\n
-// >:10 3 0 TIMEOUT				// 1st, 2nd & 3rd matched, timeout
+// >:10 3 0 TIMEOUT\n           // 1st, 2nd & 3rd matched, timeout
 //
 package main
 
