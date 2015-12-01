@@ -255,3 +255,7 @@ The source code for the test driver, as well as a sample client is given here, t
 ## Suggested answers
 
 This is just a matter of writing code :D
+
+You an see how we run the tests from this video (.ogv)
+
+<https://github.com/grokking-engineering/challenges/raw/master/nov_30_2015/guide.ogv>
