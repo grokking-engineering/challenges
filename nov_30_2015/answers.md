@@ -19,7 +19,7 @@ anything that can't be represented as a sum of powers of 2 wil be rouned up/down
 When you perform arithmetic with these rounded numbers, you will get wrong result.
 This is why scientist, programmers working with money, and anyone who care about accuracy should be extremely careful with floating point numbers 
 
-## Scoring scheme:
+## Scoring scheme
 
 Condition                               | Points |
 ----------------------------------------|--------|
@@ -66,6 +66,13 @@ need to open files too :) (but we asked for likely cause)
  
 If you ever see this error, remember these and run `lsof` to debug :)
 
+## Scoring scheme
+
+Condition                       | Points                   |
+--------------------------------|--------------------------|
+Pick all 4 answers              | 10 pts                   |
+Pick less than 4 answers        | 2 pts per correct answer | 
+
 ****
 
 # Question 3 (10pts)
@@ -91,6 +98,11 @@ While TCP/IP does guarantee delivery and ordering, it does not guarantee __respo
 Obviously, things won't wait for a year on the Internet, so people will timeout things if it takes too long. Thus (3) is correct.
 
 Also, when the packet goes to your machine, it can be blocked by firewall on the OS (on Linux, you can use iptables). Realistic usecase might be to block traffic coming from a ceterin IP (of a bad service, hacker, DDOS-er). Thus (4) is correct
+
+Condition                       | Points                   |
+--------------------------------|--------------------------|
+Pick all 2 answers              | 10 pts                   |
+Pick less than 2 answers        | 4 pts per correct answer | 
 
 ****
 
@@ -161,6 +173,13 @@ Line 25 makes `c` point to the second element of `a`, i.e. `a[1]`, and line 26 s
 Line 30 sets `c` to point to the second element of `a`, off by 1 byte, so setting the memory pointed to by `c` to `500` (`00000000 00000000 00000001 11110100`) is undefined behavior. What is observed differs based on which CPU architecture the code is compiled for and is run on. On some ARM CPUs, or on Intel x86 CPUs with unaligned memory access trap turned on, the code will generate a hardware fault (usually leads to a SIGBUS on Linux), stopping the program or summoning up the debugger. On architectures whose configuration allows unaligned memory access, what values are observed in `a[1]` and `a[2]` depend on which endianness the architecture has. If you see `128144` (`00000000 00000001 11110100 10010000`) for `a[1]` and `256` (`00000000 00000000 00000001 00000000`) for `a[2]`, you're running on a little endian architecture.
 
 Line 35 makes `b` point to the second element of `a`, i.e. `a[1]`. Line 36 makes `c` point to the first element of `a`, off by 1 byte.
+
+## Scoring scheme
+
+Condition                                   | Points                    |
+--------------------------------------------|---------------------------|
+Have all correct answers                    | 30 pts per correct answer | 
+Have less than 5 correct answers            | 5 pts per correct answer  | 
 
 ****
 
@@ -266,3 +285,7 @@ This is just a matter of writing code :D
 You an see how we run the tests from this video (.ogv)
 
 <https://github.com/grokking-engineering/challenges/raw/master/nov_30_2015/guide.ogv>
+
+## Scoring scheme
+
+We will run 50 game. The number of game you can guess correctly the result will be your score
