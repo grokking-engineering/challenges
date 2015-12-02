@@ -24,7 +24,6 @@ This is why scientist, programmers working with money, and anyone who care about
 Condition                               | Points |
 ----------------------------------------|--------|
 Did not mention floating point accuracy | 0 pts  |
-----------------------------------------|--------|
 Mention floating point accuraccy        | 10 pts | 
 
 ****
