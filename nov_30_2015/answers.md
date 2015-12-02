@@ -14,10 +14,18 @@ What do you think is the cause of this? Explain in a short answer.
 
 Basically, this is because there's a limit to how accurate floating point numbers are presented.
 As all things on computer are stored based on a base 2 system (0 & 1),
-anything that can't be represented as a sum of powers of 2 wil be rouned up/down
+anything that can't be represented as a sum of powers of 2 wil be rouned up/down.
 
 When you perform arithmetic with these rounded numbers, you will get wrong result.
 This is why scientist, programmers working with money, and anyone who care about accuracy should be extremely careful with floating point numbers 
+
+## Scoring scheme:
+
+Condition                               | Points |
+----------------------------------------|--------|
+Did not mention floating point accuracy | 0 pts  |
+----------------------------------------|--------|
+Mention floating point accuraccy        | 10 pts | 
 
 ****
 
