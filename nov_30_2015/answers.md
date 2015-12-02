@@ -68,10 +68,10 @@ If you ever see this error, remember these and run `lsof` to debug :)
 
 ## Scoring scheme
 
-Condition                       | Points                   |
---------------------------------|--------------------------|
-Pick all 4 answers              | 10 pts                   |
-Pick less than 4 answers        | 2 pts per correct answer | 
+Condition                                            | Points                   |
+-----------------------------------------------------|--------------------------|
+Pick all 4 answers ONLY                              | 10 pts                   |
+Pick less than 4 answers / have wrong answers        | 2 pts per correct answer | 
 
 ****
 
@@ -99,10 +99,10 @@ Obviously, things won't wait for a year on the Internet, so people will timeout 
 
 Also, when the packet goes to your machine, it can be blocked by firewall on the OS (on Linux, you can use iptables). Realistic usecase might be to block traffic coming from a ceterin IP (of a bad service, hacker, DDOS-er). Thus (4) is correct
 
-Condition                       | Points                   |
---------------------------------|--------------------------|
-Pick all 2 answers              | 10 pts                   |
-Pick less than 2 answers        | 4 pts per correct answer | 
+Condition                                            | Points                   |
+-----------------------------------------------------|--------------------------|
+Pick all 2 answers ONLY                              | 10 pts                   |
+Pick less than 2 answers / have wrong answers        | 4 pts per correct answer | 
 
 ****
 
