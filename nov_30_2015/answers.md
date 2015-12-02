@@ -174,6 +174,10 @@ Line 30 sets `c` to point to the second element of `a`, off by 1 byte, so settin
 
 Line 35 makes `b` point to the second element of `a`, i.e. `a[1]`. Line 36 makes `c` point to the first element of `a`, off by 1 byte.
 
+## Some notes
+Most desktop / laptop we own user Little Endian notation, and have CPU that allow unaligned memory access, thus you see 256.
+But in other cases where one of those condition is not correct, you might see something else entirely.
+
 ## Scoring scheme
 
 Condition                                   | Points                    |
