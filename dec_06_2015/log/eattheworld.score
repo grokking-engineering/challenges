@@ -1,0 +1,652 @@
+#################################
+SUITE: general
+----------------------
+TEST: FLUSHDB clear all key
+I1208 13:26:53.910062   29252 http.go:66] SENT    :{"command":"SET s a"}
+I1208 13:26:53.929722   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:26:53.930219   29252 http.go:66] SENT    :{"command":"RPUSH k b"}
+I1208 13:26:53.947638   29252 http.go:77] RECEIVED:{
+  "response": 1
+}
+I1208 13:26:53.948288   29252 http.go:66] SENT    :{"command":"SADD z c"}
+I1208 13:26:53.965507   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:26:53.965935   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:26:53.984697   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:26:53.985232   29252 http.go:66] SENT    :{"command":"GET s"}
+I1208 13:26:54.003763   29252 http.go:77] RECEIVED:{
+  "response": "EKTYP"
+}
+I1208 13:26:54.004063   29252 http.go:66] SENT    :{"command":"GET k"}
+I1208 13:26:54.025404   29252 http.go:77] RECEIVED:{
+  "response": "EKTYP"
+}
+I1208 13:26:54.025717   29252 http.go:66] SENT    :{"command":"GET z"}
+I1208 13:26:54.044105   29252 http.go:77] RECEIVED:{
+  "response": "EKTYP"
+}
+PASSED
+----------------------
+TEST: EXPIRE key after 30 seconds
+I1208 13:26:54.044481   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:26:54.067784   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:26:54.068219   29252 http.go:66] SENT    :{"command":"SET whoareyou me"}
+I1208 13:26:54.086301   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:26:54.086644   29252 http.go:66] SENT    :{"command":"EXPIRE whoareyou 30"}
+I1208 13:26:54.122635   29252 http.go:77] RECEIVED:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+  "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>UnboundLocalError: local variable 'result' referenced before assignment // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css" type="text/css">
+    <!-- We need to make sure this has a favicon so that the debugger does not by
+         accident trigger a request to /favicon.ico which might change the application
+         state. -->
+    <link rel="shortcut icon" href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script type="text/javascript" src="?__debugger__=yes&amp;cmd=resource&amp;f=jquery.js"></script>
+    <script type="text/javascript" src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+    <script type="text/javascript">
+      var TRACEBACK = 139957094080272,
+          CONSOLE_MODE = false,
+          EVALEX = true,
+          SECRET = "GjfTE4ykr3baewbkO6iV";
+    </script>
+  </head>
+  <body>
+    <div class="debugger">
+<h1>UnboundLocalError</h1>
+<div class="detail">
+  <p class="errormsg">UnboundLocalError: local variable 'result' referenced before assignment</p>
+</div>
+<h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+<div class="traceback">
+  
+  <ul><li><div class="frame" id="frame-139957094079888">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">1836</em>,
+      in <code class="function">__call__</code></h4>
+  <pre>return self.wsgi_app(environ, start_response)</pre>
+</div>
+
+<li><div class="frame" id="frame-139957094079824">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">1820</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <pre>response = self.make_response(self.handle_exception(e))</pre>
+</div>
+
+<li><div class="frame" id="frame-139957094079440">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">1403</em>,
+      in <code class="function">handle_exception</code></h4>
+  <pre>reraise(exc_type, exc_value, tb)</pre>
+</div>
+
+<li><div class="frame" id="frame-139957094079632">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">1817</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <pre>response = self.full_dispatch_request()</pre>
+</div>
+
+<li><div class="frame" id="frame-139957094077776">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">1477</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <pre>rv = self.handle_user_exception(e)</pre>
+</div>
+
+<li><div class="frame" id="frame-139957094077712">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">1381</em>,
+      in <code class="function">handle_user_exception</code></h4>
+  <pre>reraise(exc_type, exc_value, tb)</pre>
+</div>
+
+<li><div class="frame" id="frame-139957094078480">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/site-packages/flask/app.py"</cite>,
+      line <em class="line">1475</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <pre>rv = self.dispatch_request()</pre>
+</div>
+
+<li><div class="frame" id="frame-139957094078096">
+  <h4>File <cite class="filename">"/usr/local/lib/python2.7/site-packages/flask_debugtoolbar/__init__.py"</cite>,
+      line <em class="line">124</em>,
+      in <code class="function">dispatch_request</code></h4>
+  <pre>return view_func(**req.view_args)</pre>
+</div>
+
+<li><div class="frame" id="frame-139957094078864">
+  <h4>File <cite class="filename">"/usr/src/app/project/main/views.py"</cite>,
+      line <em class="line">95</em>,
+      in <code class="function">home</code></h4>
+  <pre>if result is None:</pre>
+</div>
+</ul>
+  <blockquote>UnboundLocalError: local variable 'result' referenced before assignment</blockquote>
+</div>
+
+<div class="plain">
+  <form action="/?__debugger__=yes&amp;cmd=paste" method="post">
+    <p>
+      <input type="hidden" name="language" value="pytb">
+      This is the Copy/Paste friendly version of the traceback.  <span
+      class="pastemessage">You can also paste this traceback into
+      a <a href="https://gist.github.com/">gist</a>:
+      <input type="submit" value="create paste"></span>
+    </p>
+    <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask_debugtoolbar/__init__.py", line 124, in dispatch_request
+    return view_func(**req.view_args)
+  File "/usr/src/app/project/main/views.py", line 95, in home
+    if result is None:
+UnboundLocalError: local variable 'result' referenced before assignment</textarea>
+  </form>
+</div>
+<div class="explanation">
+  The debugger caught an exception in your WSGI application.  You can now
+  look at the traceback which led to the error.  <span class="nojavascript">
+  If you enable JavaScript you can also use additional features such as code
+  execution (if the evalex feature is enabled), automatic pasting of the
+  exceptions and much more.</span>
+</div>
+      <div class="footer">
+        Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+        friendly Werkzeug powered traceback interpreter.
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1836, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1820, in wsgi_app
+    response = self.make_response(self.handle_exception(e))
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1403, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1817, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1477, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1381, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/local/lib/python2.7/site-packages/flask/app.py", line 1475, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python2.7/site-packages/flask_debugtoolbar/__init__.py", line 124, in dispatch_request
+    return view_func(**req.view_args)
+  File "/usr/src/app/project/main/views.py", line 95, in home
+    if result is None:
+UnboundLocalError: local variable 'result' referenced before assignment
+
+-->
+I1208 13:26:54.123228   29252 http.go:66] SENT    :{"command":"GET whoareyou"}
+I1208 13:26:54.150261   29252 http.go:77] RECEIVED:{
+  "response": "me"
+}
+I1208 13:26:59.150968   29252 http.go:66] SENT    :{"command":"GET whoareyou"}
+I1208 13:26:59.170947   29252 http.go:77] RECEIVED:{
+  "response": "me"
+}
+I1208 13:27:34.171680   29252 http.go:66] SENT    :{"command":"GET whoareyou"}
+I1208 13:27:34.192792   29252 http.go:77] RECEIVED:{
+  "response": "me"
+}
+FAILED
+----------------------
+TEST: Delete a key
+I1208 13:27:34.193250   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:34.214969   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.215335   29252 http.go:66] SENT    :{"command":"SET name grokking"}
+I1208 13:27:34.234737   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.235247   29252 http.go:66] SENT    :{"command":"GET name"}
+I1208 13:27:34.254682   29252 http.go:77] RECEIVED:{
+  "response": "grokking"
+}
+I1208 13:27:34.255054   29252 http.go:66] SENT    :{"command":"DEL name"}
+I1208 13:27:34.272959   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.273350   29252 http.go:66] SENT    :{"command":"GET name"}
+I1208 13:27:34.291210   29252 http.go:77] RECEIVED:{
+  "response": "EKTYP"
+}
+PASSED
+
+PASSED: 2/3
+#################################
+SUITE: strings
+----------------------
+TEST: basic SET
+I1208 13:27:34.291684   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:34.308633   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.308998   29252 http.go:66] SENT    :{"command":"SET name grokking"}
+I1208 13:27:34.327732   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+PASSED
+----------------------
+TEST: basic GET
+I1208 13:27:34.328181   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:34.345230   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.345639   29252 http.go:66] SENT    :{"command":"SET name grokking"}
+I1208 13:27:34.363306   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.363666   29252 http.go:66] SENT    :{"command":"SET name engineering"}
+I1208 13:27:34.381223   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.381631   29252 http.go:66] SENT    :{"command":"GET name"}
+I1208 13:27:34.399302   29252 http.go:77] RECEIVED:{
+  "response": "engineering"
+}
+PASSED
+----------------------
+TEST: GET non-existing key
+I1208 13:27:34.399933   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:34.417028   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.417465   29252 http.go:66] SENT    :{"command":"GET notfound"}
+I1208 13:27:34.436644   29252 http.go:77] RECEIVED:{
+  "response": "EKTYP"
+}
+PASSED
+
+PASSED: 3/3
+#################################
+SUITE: lists
+----------------------
+TEST: RPUSH to a list
+I1208 13:27:34.437096   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:34.457915   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.458275   29252 http.go:66] SENT    :{"command":"RPUSH programmers huy"}
+I1208 13:27:34.476774   29252 http.go:77] RECEIVED:{
+  "response": 1
+}
+I1208 13:27:34.477140   29252 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
+I1208 13:27:34.496883   29252 http.go:77] RECEIVED:{
+  "response": 5
+}
+PASSED
+----------------------
+TEST: RPUSH to a non-list key
+I1208 13:27:34.497383   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:34.516202   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.516453   29252 http.go:66] SENT    :{"command":"SET programmers me"}
+I1208 13:27:34.532176   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.532415   29252 http.go:66] SENT    :{"command":"RPUSH programmers huy"}
+I1208 13:27:34.549685   29252 http.go:77] RECEIVED:{
+  "response": "EINV"
+}
+FAILED
+----------------------
+TEST: LPOP a list
+I1208 13:27:34.550056   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:34.575749   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.576111   29252 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
+I1208 13:27:34.598172   29252 http.go:77] RECEIVED:{
+  "response": 4
+}
+I1208 13:27:34.598533   29252 http.go:66] SENT    :{"command":"LPOP programmers"}
+I1208 13:27:34.615989   29252 http.go:77] RECEIVED:{
+  "response": "loc"
+}
+I1208 13:27:34.616350   29252 http.go:66] SENT    :{"command":"LRANGE programmers 0 2"}
+I1208 13:27:34.633326   29252 http.go:77] RECEIVED:{
+  "response": [
+    "khiem",
+    "minh",
+    "khanh"
+  ]
+}
+PASSED
+----------------------
+TEST: LPOP non-existing key
+I1208 13:27:34.633985   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:34.650258   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.650586   29252 http.go:66] SENT    :{"command":"LPOP notfound"}
+I1208 13:27:34.668967   29252 http.go:77] RECEIVED:{
+  "response": "EKTYP"
+}
+PASSED
+----------------------
+TEST: RPOP a list
+I1208 13:27:34.669395   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:34.685828   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.686171   29252 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
+I1208 13:27:34.704692   29252 http.go:77] RECEIVED:{
+  "response": 4
+}
+I1208 13:27:34.705033   29252 http.go:66] SENT    :{"command":"RPOP programmers"}
+I1208 13:27:34.721477   29252 http.go:77] RECEIVED:{
+  "response": "khanh"
+}
+I1208 13:27:34.721840   29252 http.go:66] SENT    :{"command":"LRANGE programmers 0 2"}
+I1208 13:27:34.738829   29252 http.go:77] RECEIVED:{
+  "response": [
+    "loc",
+    "khiem",
+    "minh"
+  ]
+}
+PASSED
+----------------------
+TEST: RPOP non-existing key
+I1208 13:27:34.739744   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:34.758220   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.758438   29252 http.go:66] SENT    :{"command":"RPOP notfound"}
+I1208 13:27:34.777369   29252 http.go:77] RECEIVED:{
+  "response": "EKTYP"
+}
+PASSED
+----------------------
+TEST: LRANGE a list
+I1208 13:27:34.777760   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:34.795682   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.796045   29252 http.go:66] SENT    :{"command":"RPUSH languages ruby python c cpp golang java"}
+I1208 13:27:34.811439   29252 http.go:77] RECEIVED:{
+  "response": 6
+}
+I1208 13:27:34.811806   29252 http.go:66] SENT    :{"command":"LRANGE languages 0 1"}
+I1208 13:27:34.828422   29252 http.go:77] RECEIVED:{
+  "response": [
+    "ruby",
+    "python"
+  ]
+}
+I1208 13:27:34.828892   29252 http.go:66] SENT    :{"command":"LRANGE languages 2 4"}
+I1208 13:27:34.847689   29252 http.go:77] RECEIVED:{
+  "response": [
+    "c",
+    "cpp",
+    "golang"
+  ]
+}
+PASSED
+----------------------
+TEST: LRANGE non-existing list
+I1208 13:27:34.848276   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:34.865828   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.866347   29252 http.go:66] SENT    :{"command":"LRANGE notfound 0 1"}
+I1208 13:27:34.882907   29252 http.go:77] RECEIVED:{
+  "response": "EKTYP"
+}
+PASSED
+----------------------
+TEST: LRANGE with invalid range
+I1208 13:27:34.883288   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:34.900067   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.900427   29252 http.go:66] SENT    :{"command":"RPUSH languages ruby"}
+I1208 13:27:34.917406   29252 http.go:77] RECEIVED:{
+  "response": 1
+}
+I1208 13:27:34.917777   29252 http.go:66] SENT    :{"command":"LRANGE languages 2 4"}
+I1208 13:27:34.937044   29252 http.go:77] RECEIVED:{
+  "response": []
+}
+PASSED
+----------------------
+TEST: LLEN a list
+I1208 13:27:34.937532   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:34.954179   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:34.954550   29252 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
+I1208 13:27:34.971325   29252 http.go:77] RECEIVED:{
+  "response": 4
+}
+I1208 13:27:34.971692   29252 http.go:66] SENT    :{"command":"LLEN programmers"}
+I1208 13:27:34.989104   29252 http.go:77] RECEIVED:{
+  "response": 4
+}
+PASSED
+----------------------
+TEST: LLEN non-existing key
+I1208 13:27:34.989711   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:35.006220   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.006459   29252 http.go:66] SENT    :{"command":"LLEN notfound"}
+I1208 13:27:35.022546   29252 http.go:77] RECEIVED:{
+  "response": "EKTYP"
+}
+PASSED
+
+PASSED: 10/11
+#################################
+SUITE: sets
+----------------------
+TEST: SADD creates a set
+I1208 13:27:35.023029   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:35.040010   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.040441   29252 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
+I1208 13:27:35.059022   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+PASSED
+----------------------
+TEST: SADD wrong key type
+I1208 13:27:35.059462   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:35.076796   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.077135   29252 http.go:66] SENT    :{"command":"SET asean asean"}
+I1208 13:27:35.093476   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.093830   29252 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
+I1208 13:27:35.110531   29252 http.go:77] RECEIVED:{
+  "response": "EINV"
+}
+FAILED
+----------------------
+TEST: SREM removes members from a set
+I1208 13:27:35.110896   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:35.127775   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.128196   29252 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1208 13:27:35.145034   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.145454   29252 http.go:66] SENT    :{"command":"SREM myset a b"}
+I1208 13:27:35.161749   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+PASSED
+----------------------
+TEST: SCARD queries a set size
+I1208 13:27:35.162176   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:35.178701   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.179048   29252 http.go:66] SENT    :{"command":"SADD myset a b c d"}
+I1208 13:27:35.196452   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.196797   29252 http.go:66] SENT    :{"command":"SCARD myset"}
+I1208 13:27:35.213207   29252 http.go:77] RECEIVED:{
+  "response": 4
+}
+PASSED
+----------------------
+TEST: SCARD wrong key type
+I1208 13:27:35.213755   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:35.228976   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.229415   29252 http.go:66] SENT    :{"command":"RPUSH mylist a b c d"}
+I1208 13:27:35.244779   29252 http.go:77] RECEIVED:{
+  "response": 4
+}
+I1208 13:27:35.245150   29252 http.go:66] SENT    :{"command":"SCARD mylist"}
+I1208 13:27:35.259389   29252 http.go:77] RECEIVED:{
+  "response": "EKTYP"
+}
+PASSED
+----------------------
+TEST: SInter intersects sets
+I1208 13:27:35.259682   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:35.276090   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.276524   29252 http.go:66] SENT    :{"command":"SADD myseta a b c d e"}
+I1208 13:27:35.291367   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.291730   29252 http.go:66] SENT    :{"command":"SADD mysetb a b c"}
+I1208 13:27:35.306399   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.306827   29252 http.go:66] SENT    :{"command":"SADD mysetc a"}
+I1208 13:27:35.320881   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.321254   29252 http.go:66] SENT    :{"command":"SINTER myseta mysetb mysetc"}
+I1208 13:27:35.335617   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+FAILED
+----------------------
+TEST: SMEMBERS queries a set's members
+I1208 13:27:35.336085   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:35.350027   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.350384   29252 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1208 13:27:35.364501   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.364860   29252 http.go:66] SENT    :{"command":"SMEMBERS myset"}
+I1208 13:27:35.381603   29252 http.go:77] RECEIVED:{
+  "response": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e"
+  ]
+}
+PASSED
+----------------------
+TEST: SREM and then SMEMBERS to query result
+I1208 13:27:35.382424   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:35.399802   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.400139   29252 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1208 13:27:35.415599   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.415932   29252 http.go:66] SENT    :{"command":"SREM myset a b"}
+I1208 13:27:35.431178   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.431517   29252 http.go:66] SENT    :{"command":"SMEMBERS myset"}
+I1208 13:27:35.448177   29252 http.go:77] RECEIVED:{
+  "response": [
+    "c",
+    "d",
+    "e"
+  ]
+}
+PASSED
+
+PASSED: 6/8
+#################################
+SUITE: save
+----------------------
+TEST: Save and restore
+I1208 13:27:35.448987   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:35.464329   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.464759   29252 http.go:66] SENT    :{"command":"SET name grokking"}
+I1208 13:27:35.480425   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.480770   29252 http.go:66] SENT    :{"command":"RPUSH colors green blue red white"}
+I1208 13:27:35.496061   29252 http.go:77] RECEIVED:{
+  "response": 4
+}
+I1208 13:27:35.496495   29252 http.go:66] SENT    :{"command":"SADD countries vietnam singapore vietnam"}
+I1208 13:27:35.511776   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.512125   29252 http.go:66] SENT    :{"command":"SAVE"}
+I1208 13:27:35.527640   29252 http.go:77] RECEIVED:{
+  "response": "EINV"
+}
+I1208 13:27:35.527982   29252 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:27:35.542798   29252 http.go:77] RECEIVED:{
+  "response": "OK"
+}
+I1208 13:27:35.543156   29252 http.go:66] SENT    :{"command":"RESTORE"}
+I1208 13:27:35.559301   29252 http.go:77] RECEIVED:{
+  "response": "EINV"
+}
+I1208 13:27:35.559595   29252 http.go:66] SENT    :{"command":"GET name"}
+I1208 13:27:35.574512   29252 http.go:77] RECEIVED:{
+  "response": "EKTYP"
+}
+FAILED
+
+PASSED: 0/1

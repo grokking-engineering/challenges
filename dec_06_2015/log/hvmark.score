@@ -1,0 +1,242 @@
+#################################
+SUITE: general
+----------------------
+TEST: FLUSHDB clear all key
+I1208 13:28:05.183423   29304 http.go:66] SENT    :{"command":"SET s a"}
+I1208 13:28:05.202069   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.202361   29304 http.go:66] SENT    :{"command":"RPUSH k b"}
+I1208 13:28:05.213948   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.214234   29304 http.go:66] SENT    :{"command":"SADD z c"}
+I1208 13:28:05.221132   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.221389   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.228067   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: EXPIRE key after 30 seconds
+I1208 13:28:05.228449   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.235296   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.235525   29304 http.go:66] SENT    :{"command":"SET whoareyou me"}
+I1208 13:28:05.249035   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.249265   29304 http.go:66] SENT    :{"command":"EXPIRE whoareyou 30"}
+I1208 13:28:05.256694   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.256981   29304 http.go:66] SENT    :{"command":"GET whoareyou"}
+I1208 13:28:05.264321   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: Delete a key
+I1208 13:28:05.264779   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.271078   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.271354   29304 http.go:66] SENT    :{"command":"SET name grokking"}
+I1208 13:28:05.280108   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.280367   29304 http.go:66] SENT    :{"command":"GET name"}
+I1208 13:28:05.286830   29304 http.go:77] RECEIVED:Hello World
+FAILED
+
+PASSED: 0/3
+#################################
+SUITE: strings
+----------------------
+TEST: basic SET
+I1208 13:28:05.287260   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.295571   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.295826   29304 http.go:66] SENT    :{"command":"SET name grokking"}
+I1208 13:28:05.303471   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: basic GET
+I1208 13:28:05.304025   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.310587   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.310799   29304 http.go:66] SENT    :{"command":"SET name grokking"}
+I1208 13:28:05.321037   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.321265   29304 http.go:66] SENT    :{"command":"SET name engineering"}
+I1208 13:28:05.327692   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.327899   29304 http.go:66] SENT    :{"command":"GET name"}
+I1208 13:28:05.334234   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: GET non-existing key
+I1208 13:28:05.334538   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.340817   29304 http.go:77] RECEIVED:Hello World
+FAILED
+
+PASSED: 0/3
+#################################
+SUITE: lists
+----------------------
+TEST: RPUSH to a list
+I1208 13:28:05.341167   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.347531   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: RPUSH to a non-list key
+I1208 13:28:05.347798   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.355828   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: LPOP a list
+I1208 13:28:05.356138   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.362221   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.362419   29304 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
+I1208 13:28:05.368708   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.368887   29304 http.go:66] SENT    :{"command":"LPOP programmers"}
+I1208 13:28:05.375388   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: LPOP non-existing key
+I1208 13:28:05.375646   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.382501   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.382671   29304 http.go:66] SENT    :{"command":"LPOP notfound"}
+I1208 13:28:05.388767   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: RPOP a list
+I1208 13:28:05.389046   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.396160   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: RPOP non-existing key
+I1208 13:28:05.396471   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.404777   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: LRANGE a list
+I1208 13:28:05.405041   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.411437   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.411713   29304 http.go:66] SENT    :{"command":"RPUSH languages ruby python c cpp golang java"}
+I1208 13:28:05.417896   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.418097   29304 http.go:66] SENT    :{"command":"LRANGE languages 0 1"}
+I1208 13:28:05.424550   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: LRANGE non-existing list
+I1208 13:28:05.424822   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.430841   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.431114   29304 http.go:66] SENT    :{"command":"LRANGE notfound 0 1"}
+I1208 13:28:05.438469   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: LRANGE with invalid range
+I1208 13:28:05.438738   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.445082   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.445331   29304 http.go:66] SENT    :{"command":"RPUSH languages ruby"}
+I1208 13:28:05.451787   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.451986   29304 http.go:66] SENT    :{"command":"LRANGE languages 2 4"}
+I1208 13:28:05.466118   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: LLEN a list
+I1208 13:28:05.466390   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.472739   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: LLEN non-existing key
+I1208 13:28:05.473011   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.479551   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.479828   29304 http.go:66] SENT    :{"command":"LLEN notfound"}
+I1208 13:28:05.486026   29304 http.go:77] RECEIVED:Hello World
+FAILED
+
+PASSED: 0/11
+#################################
+SUITE: sets
+----------------------
+TEST: SADD creates a set
+I1208 13:28:05.486376   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.493326   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.493564   29304 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
+I1208 13:28:05.499817   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: SADD wrong key type
+I1208 13:28:05.500145   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.506194   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.506405   29304 http.go:66] SENT    :{"command":"SET asean asean"}
+I1208 13:28:05.513263   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.513657   29304 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
+I1208 13:28:05.521014   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: SREM removes members from a set
+I1208 13:28:05.521420   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.527674   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.527931   29304 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1208 13:28:05.533931   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.534043   29304 http.go:66] SENT    :{"command":"SREM myset a b"}
+I1208 13:28:05.542270   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: SCARD queries a set size
+I1208 13:28:05.542443   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.548310   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.548450   29304 http.go:66] SENT    :{"command":"SADD myset a b c d"}
+I1208 13:28:05.553907   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.554153   29304 http.go:66] SENT    :{"command":"SCARD myset"}
+I1208 13:28:05.560850   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: SCARD wrong key type
+I1208 13:28:05.561224   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.568507   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.568617   29304 http.go:66] SENT    :{"command":"RPUSH mylist a b c d"}
+I1208 13:28:05.575326   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.575625   29304 http.go:66] SENT    :{"command":"SCARD mylist"}
+I1208 13:28:05.582406   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: SInter intersects sets
+I1208 13:28:05.582717   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.589633   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.589867   29304 http.go:66] SENT    :{"command":"SADD myseta a b c d e"}
+I1208 13:28:05.596081   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.596286   29304 http.go:66] SENT    :{"command":"SADD mysetb a b c"}
+I1208 13:28:05.602218   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.602419   29304 http.go:66] SENT    :{"command":"SADD mysetc a"}
+I1208 13:28:05.608121   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.608324   29304 http.go:66] SENT    :{"command":"SINTER myseta mysetb mysetc"}
+I1208 13:28:05.615447   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: SMEMBERS queries a set's members
+I1208 13:28:05.615740   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.621698   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.621902   29304 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1208 13:28:05.629002   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.629245   29304 http.go:66] SENT    :{"command":"SMEMBERS myset"}
+I1208 13:28:05.635491   29304 http.go:77] RECEIVED:Hello World
+FAILED
+----------------------
+TEST: SREM and then SMEMBERS to query result
+I1208 13:28:05.635804   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.643625   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.643835   29304 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1208 13:28:05.650050   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.650265   29304 http.go:66] SENT    :{"command":"SREM myset a b"}
+I1208 13:28:05.660575   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.660776   29304 http.go:66] SENT    :{"command":"SMEMBERS myset"}
+I1208 13:28:05.668608   29304 http.go:77] RECEIVED:Hello World
+FAILED
+
+PASSED: 0/8
+#################################
+SUITE: save
+----------------------
+TEST: Save and restore
+I1208 13:28:05.668967   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.677543   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.677781   29304 http.go:66] SENT    :{"command":"SET name grokking"}
+I1208 13:28:05.684737   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.685010   29304 http.go:66] SENT    :{"command":"RPUSH colors green blue red white"}
+I1208 13:28:05.691172   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.691379   29304 http.go:66] SENT    :{"command":"SADD countries vietnam singapore vietnam"}
+I1208 13:28:05.696493   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.696684   29304 http.go:66] SENT    :{"command":"SAVE"}
+I1208 13:28:05.703171   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.703360   29304 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:05.709739   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.709926   29304 http.go:66] SENT    :{"command":"RESTORE"}
+I1208 13:28:05.724314   29304 http.go:77] RECEIVED:Hello World
+I1208 13:28:05.724517   29304 http.go:66] SENT    :{"command":"GET name"}
+I1208 13:28:05.730762   29304 http.go:77] RECEIVED:Hello World
+FAILED
+
+PASSED: 0/1

@@ -1,0 +1,170 @@
+#################################
+SUITE: general
+----------------------
+TEST: FLUSHDB clear all key
+I1208 13:28:35.863118   29352 http.go:66] SENT    :{"command":"SET s a"}
+I1208 13:28:35.869939   29352 http.go:66] SENT    :{"command":"RPUSH k b"}
+I1208 13:28:35.875695   29352 http.go:66] SENT    :{"command":"SADD z c"}
+I1208 13:28:35.881901   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+FAILED
+----------------------
+TEST: EXPIRE key after 30 seconds
+I1208 13:28:35.888525   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:35.894971   29352 http.go:66] SENT    :{"command":"SET whoareyou me"}
+I1208 13:28:35.901903   29352 http.go:66] SENT    :{"command":"EXPIRE whoareyou 30"}
+I1208 13:28:35.907965   29352 http.go:66] SENT    :{"command":"GET whoareyou"}
+FAILED
+----------------------
+TEST: Delete a key
+I1208 13:28:35.914780   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:35.921054   29352 http.go:66] SENT    :{"command":"SET name grokking"}
+I1208 13:28:35.927060   29352 http.go:66] SENT    :{"command":"GET name"}
+FAILED
+
+PASSED: 0/3
+#################################
+SUITE: strings
+----------------------
+TEST: basic SET
+I1208 13:28:35.932719   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:35.938220   29352 http.go:66] SENT    :{"command":"SET name grokking"}
+FAILED
+----------------------
+TEST: basic GET
+I1208 13:28:35.943731   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:35.950539   29352 http.go:66] SENT    :{"command":"SET name grokking"}
+I1208 13:28:35.957142   29352 http.go:66] SENT    :{"command":"SET name engineering"}
+I1208 13:28:35.962708   29352 http.go:66] SENT    :{"command":"GET name"}
+FAILED
+----------------------
+TEST: GET non-existing key
+I1208 13:28:35.968247   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+FAILED
+
+PASSED: 0/3
+#################################
+SUITE: lists
+----------------------
+TEST: RPUSH to a list
+I1208 13:28:35.973788   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+FAILED
+----------------------
+TEST: RPUSH to a non-list key
+I1208 13:28:35.979229   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+FAILED
+----------------------
+TEST: LPOP a list
+I1208 13:28:35.984508   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:35.989946   29352 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
+I1208 13:28:35.996663   29352 http.go:66] SENT    :{"command":"LPOP programmers"}
+FAILED
+----------------------
+TEST: LPOP non-existing key
+I1208 13:28:36.002403   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:36.007753   29352 http.go:66] SENT    :{"command":"LPOP notfound"}
+FAILED
+----------------------
+TEST: RPOP a list
+I1208 13:28:36.013344   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+FAILED
+----------------------
+TEST: RPOP non-existing key
+I1208 13:28:36.018540   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+FAILED
+----------------------
+TEST: LRANGE a list
+I1208 13:28:36.024065   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:36.029638   29352 http.go:66] SENT    :{"command":"RPUSH languages ruby python c cpp golang java"}
+I1208 13:28:36.035772   29352 http.go:66] SENT    :{"command":"LRANGE languages 0 1"}
+FAILED
+----------------------
+TEST: LRANGE non-existing list
+I1208 13:28:36.040918   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:36.047350   29352 http.go:66] SENT    :{"command":"LRANGE notfound 0 1"}
+FAILED
+----------------------
+TEST: LRANGE with invalid range
+I1208 13:28:36.052645   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:36.058139   29352 http.go:66] SENT    :{"command":"RPUSH languages ruby"}
+I1208 13:28:36.063228   29352 http.go:66] SENT    :{"command":"LRANGE languages 2 4"}
+FAILED
+----------------------
+TEST: LLEN a list
+I1208 13:28:36.068463   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+FAILED
+----------------------
+TEST: LLEN non-existing key
+I1208 13:28:36.073924   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:36.079905   29352 http.go:66] SENT    :{"command":"LLEN notfound"}
+FAILED
+
+PASSED: 0/11
+#################################
+SUITE: sets
+----------------------
+TEST: SADD creates a set
+I1208 13:28:36.084928   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:36.090297   29352 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
+FAILED
+----------------------
+TEST: SADD wrong key type
+I1208 13:28:36.095565   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:36.103037   29352 http.go:66] SENT    :{"command":"SET asean asean"}
+I1208 13:28:36.108682   29352 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
+FAILED
+----------------------
+TEST: SREM removes members from a set
+I1208 13:28:36.115283   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:36.120885   29352 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1208 13:28:36.127295   29352 http.go:66] SENT    :{"command":"SREM myset a b"}
+FAILED
+----------------------
+TEST: SCARD queries a set size
+I1208 13:28:36.132807   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:36.139406   29352 http.go:66] SENT    :{"command":"SADD myset a b c d"}
+I1208 13:28:36.146144   29352 http.go:66] SENT    :{"command":"SCARD myset"}
+FAILED
+----------------------
+TEST: SCARD wrong key type
+I1208 13:28:36.154555   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:36.160676   29352 http.go:66] SENT    :{"command":"RPUSH mylist a b c d"}
+I1208 13:28:36.165997   29352 http.go:66] SENT    :{"command":"SCARD mylist"}
+FAILED
+----------------------
+TEST: SInter intersects sets
+I1208 13:28:36.171569   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:36.176915   29352 http.go:66] SENT    :{"command":"SADD myseta a b c d e"}
+I1208 13:28:36.182325   29352 http.go:66] SENT    :{"command":"SADD mysetb a b c"}
+I1208 13:28:36.188960   29352 http.go:66] SENT    :{"command":"SADD mysetc a"}
+I1208 13:28:36.194700   29352 http.go:66] SENT    :{"command":"SINTER myseta mysetb mysetc"}
+FAILED
+----------------------
+TEST: SMEMBERS queries a set's members
+I1208 13:28:36.200177   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:36.205588   29352 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1208 13:28:36.211133   29352 http.go:66] SENT    :{"command":"SMEMBERS myset"}
+FAILED
+----------------------
+TEST: SREM and then SMEMBERS to query result
+I1208 13:28:36.216588   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:36.222111   29352 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1208 13:28:36.227485   29352 http.go:66] SENT    :{"command":"SREM myset a b"}
+I1208 13:28:36.233150   29352 http.go:66] SENT    :{"command":"SMEMBERS myset"}
+FAILED
+
+PASSED: 0/8
+#################################
+SUITE: save
+----------------------
+TEST: Save and restore
+I1208 13:28:36.240209   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:36.245567   29352 http.go:66] SENT    :{"command":"SET name grokking"}
+I1208 13:28:36.251137   29352 http.go:66] SENT    :{"command":"RPUSH colors green blue red white"}
+I1208 13:28:36.257167   29352 http.go:66] SENT    :{"command":"SADD countries vietnam singapore vietnam"}
+I1208 13:28:36.263011   29352 http.go:66] SENT    :{"command":"SAVE"}
+I1208 13:28:36.268294   29352 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1208 13:28:36.273570   29352 http.go:66] SENT    :{"command":"RESTORE"}
+I1208 13:28:36.279580   29352 http.go:66] SENT    :{"command":"GET name"}
+FAILED
+
+PASSED: 0/1
