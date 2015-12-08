@@ -144,6 +144,8 @@ Content-Type: text/plain; charset=utf-8.
 {"response":"EKTYP"}
 ```
 
+****
+
 ### EXPIRE (5pts)
 `EXPIRE key timeToLive`
 
@@ -327,6 +329,8 @@ Content-Type: text/plain; charset=utf-8.
 
 ## String
 
+****
+
 ### SET (5pts)
 `SET key value`
 
@@ -366,6 +370,8 @@ Content-Type: text/plain; charset=utf-8.
 .
 {"response":"OK"}
 ```
+
+****
 
 ### GET (5pts)
 `GET key`
@@ -480,6 +486,8 @@ Content-Type: text/plain; charset=utf-8.
 
 ## List
 
+****
+
 ### RPUSH (4pts)
 `RPUSH key value [value ...]`
 
@@ -590,6 +598,8 @@ Content-Type: text/plain; charset=utf-8.
 .
 {"response":"EKTYP"}
 ```
+
+****
 
 ### LPOP (4pts)
 `LPOP key`
@@ -702,6 +712,8 @@ Content-Type: text/plain; charset=utf-8.
 {"response":"EKTYP"}
 ```
 
+****
+
 ### RPOP (4pts)
 `RPOP key`
 
@@ -812,6 +824,8 @@ Content-Type: text/plain; charset=utf-8.
 .
 {"response":"EKTYP"}
 ```
+
+****
 
 ### LRANGE (4pts)
 `LRANGE key start stop`
@@ -978,6 +992,8 @@ Content-Type: text/plain; charset=utf-8.
 {"response":"EINV"}
 ```
 
+****
+
 ### LLEN (4pts)
 `LLEN key`
 
@@ -1074,6 +1090,8 @@ Content-Type: text/plain; charset=utf-8.
 
 ## Set
 
+****
+
 ### SADD (4pts)
 `SADD key value [value ...]`
 
@@ -1151,6 +1169,8 @@ Content-Type: text/plain; charset=utf-8.
 {"response":"EKTYP"}
 ```
 
+****
+
 ### SREM (4pts)
 `SREM key value [value ...]`
 
@@ -1207,6 +1227,8 @@ Content-Type: text/plain; charset=utf-8.
 .
 {"response":"OK"}
 ```
+
+****
 
 ### SCARD (4pts)
 `SCARD key`
@@ -1319,6 +1341,8 @@ Content-Type: text/plain; charset=utf-8.
 {"response":"EKTYP"}
 ```
 
+****
+
 ### SINTER (4pts)
 `SINTER key [key ...]`
 
@@ -1410,6 +1434,8 @@ Content-Type: text/plain; charset=utf-8.
 {"response":["a"]}
 ```
 
+****
+
 ### SMEMBERS (4pts)
 `SMEMBERS key`
 
@@ -1466,6 +1492,8 @@ Content-Type: text/plain; charset=utf-8.
 .
 {"response":["b","c","d","e","a"]}
 ```
+
+****
 
 ### SREM and then SMEMBERS to query result (2pts)
 ```
@@ -1539,6 +1567,8 @@ Content-Type: text/plain; charset=utf-8.
 ```
 
 ## Save and restore
+
+****
 
 ### SAVE & RESTORE (30pts)
 `SAVE`
