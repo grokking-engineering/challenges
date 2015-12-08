@@ -15,10 +15,9 @@ There has been some changes to the scoring table:
 - TTL test case (5pts) was not feasible to implement (because the round-trip time
 between our client tester & your service will make the returned TTL time incorrect).
 Thus, we will not give the 5pts of this test case for anyone
+- Some commands are broken down into more tests cases (like invalid key type, invalid value). However, the total score of that command remain unchanged
 
-# Test cases
-
-## General
+****
 
 ### FLUSHDB (5pts)
 `FLUSHDB`
