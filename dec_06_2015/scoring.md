@@ -8,6 +8,8 @@ To make it transparent to participants, we will publish the result of running
 our test driver on your service, together with an ngrep dump of all HTTP requests
 cominng / going from it.
 
+[You can view it here](https://github.com/grokking-engineering/challenges/tree/master/dec_06_2015/log)
+
 # Changes
 
 There has been some changes to the scoring table:
