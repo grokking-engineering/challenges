@@ -2,47 +2,47 @@
 SUITE: general
 ----------------------
 TEST: FLUSHDB clear all key
-I1208 14:25:28.248818     387 http.go:66] SENT    :{"command":"SET s a"}
-I1208 14:25:28.279040     387 http.go:77] RECEIVED:{
+I1209 11:03:56.123703   82854 http.go:66] SENT    :{"command":"SET s a"}
+I1209 11:03:56.150365   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:25:28.279570     387 http.go:66] SENT    :{"command":"RPUSH k b"}
-I1208 14:25:28.309833     387 http.go:77] RECEIVED:{
+I1209 11:03:56.150678   82854 http.go:66] SENT    :{"command":"RPUSH k b"}
+I1209 11:03:56.174200   82854 http.go:78] RECEIVED:{
   "response": 1
 }
-I1208 14:25:28.310396     387 http.go:66] SENT    :{"command":"SADD z c"}
-I1208 14:25:28.337484     387 http.go:77] RECEIVED:{
+I1209 11:03:56.174358   82854 http.go:66] SENT    :{"command":"SADD z c"}
+I1209 11:03:56.580337   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:25:28.337846     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:25:28.360524     387 http.go:77] RECEIVED:{
+I1209 11:03:56.580516   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:03:56.613713   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:25:28.360946     387 http.go:66] SENT    :{"command":"GET s"}
-I1208 14:25:28.381973     387 http.go:77] RECEIVED:{
+I1209 11:03:56.613890   82854 http.go:66] SENT    :{"command":"GET s"}
+I1209 11:03:56.634320   82854 http.go:78] RECEIVED:{
   "response": "EKTYP"
 }
-I1208 14:25:28.382478     387 http.go:66] SENT    :{"command":"GET k"}
-I1208 14:25:28.409642     387 http.go:77] RECEIVED:{
+I1209 11:03:56.634451   82854 http.go:66] SENT    :{"command":"GET k"}
+I1209 11:03:56.654400   82854 http.go:78] RECEIVED:{
   "response": "EKTYP"
 }
-I1208 14:25:28.409958     387 http.go:66] SENT    :{"command":"GET z"}
-I1208 14:25:28.439298     387 http.go:77] RECEIVED:{
+I1209 11:03:56.654536   82854 http.go:66] SENT    :{"command":"GET z"}
+I1209 11:03:56.679226   82854 http.go:78] RECEIVED:{
   "response": "EKTYP"
 }
 PASSED
 ----------------------
 TEST: EXPIRE key after 30 seconds
-I1208 14:25:28.439940     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:25:28.478478     387 http.go:77] RECEIVED:{
+I1209 11:03:56.679433   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:03:56.716701   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:25:28.479013     387 http.go:66] SENT    :{"command":"SET whoareyou me"}
-I1208 14:25:28.517756     387 http.go:77] RECEIVED:{
+I1209 11:03:56.716902   82854 http.go:66] SENT    :{"command":"SET whoareyou me"}
+I1209 11:03:56.746602   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:25:28.518163     387 http.go:66] SENT    :{"command":"EXPIRE whoareyou 30"}
-I1208 14:25:28.559979     387 http.go:77] RECEIVED:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+I1209 11:03:56.746770   82854 http.go:66] SENT    :{"command":"EXPIRE whoareyou 30"}
+I1209 11:03:57.115380   82854 http.go:78] RECEIVED:<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
   "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
@@ -55,7 +55,7 @@ I1208 14:25:28.559979     387 http.go:77] RECEIVED:<!DOCTYPE HTML PUBLIC "-//W3C
     <script type="text/javascript" src="?__debugger__=yes&amp;cmd=resource&amp;f=jquery.js"></script>
     <script type="text/javascript" src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
     <script type="text/javascript">
-      var TRACEBACK = 139957085517648,
+      var TRACEBACK = 139957085518672,
           CONSOLE_MODE = false,
           EVALEX = true,
           SECRET = "GjfTE4ykr3baewbkO6iV";
@@ -70,63 +70,63 @@ I1208 14:25:28.559979     387 http.go:77] RECEIVED:<!DOCTYPE HTML PUBLIC "-//W3C
 <h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
 <div class="traceback">
   
-  <ul><li><div class="frame" id="frame-139957085518288">
+  <ul><li><div class="frame" id="frame-139957079760144">
   <h4>File <cite class="filename">"/usr/local/lib/python2.7/site-packages/flask/app.py"</cite>,
       line <em class="line">1836</em>,
       in <code class="function">__call__</code></h4>
   <pre>return self.wsgi_app(environ, start_response)</pre>
 </div>
 
-<li><div class="frame" id="frame-139957085518224">
+<li><div class="frame" id="frame-139957079760080">
   <h4>File <cite class="filename">"/usr/local/lib/python2.7/site-packages/flask/app.py"</cite>,
       line <em class="line">1820</em>,
       in <code class="function">wsgi_app</code></h4>
   <pre>response = self.make_response(self.handle_exception(e))</pre>
 </div>
 
-<li><div class="frame" id="frame-139957085516304">
+<li><div class="frame" id="frame-139957079758992">
   <h4>File <cite class="filename">"/usr/local/lib/python2.7/site-packages/flask/app.py"</cite>,
       line <em class="line">1403</em>,
       in <code class="function">handle_exception</code></h4>
   <pre>reraise(exc_type, exc_value, tb)</pre>
 </div>
 
-<li><div class="frame" id="frame-139957085519120">
+<li><div class="frame" id="frame-139957079757008">
   <h4>File <cite class="filename">"/usr/local/lib/python2.7/site-packages/flask/app.py"</cite>,
       line <em class="line">1817</em>,
       in <code class="function">wsgi_app</code></h4>
   <pre>response = self.full_dispatch_request()</pre>
 </div>
 
-<li><div class="frame" id="frame-139957085519696">
+<li><div class="frame" id="frame-139957079757264">
   <h4>File <cite class="filename">"/usr/local/lib/python2.7/site-packages/flask/app.py"</cite>,
       line <em class="line">1477</em>,
       in <code class="function">full_dispatch_request</code></h4>
   <pre>rv = self.handle_user_exception(e)</pre>
 </div>
 
-<li><div class="frame" id="frame-139957085519184">
+<li><div class="frame" id="frame-139957079757520">
   <h4>File <cite class="filename">"/usr/local/lib/python2.7/site-packages/flask/app.py"</cite>,
       line <em class="line">1381</em>,
       in <code class="function">handle_user_exception</code></h4>
   <pre>reraise(exc_type, exc_value, tb)</pre>
 </div>
 
-<li><div class="frame" id="frame-139957085519056">
+<li><div class="frame" id="frame-139957079756944">
   <h4>File <cite class="filename">"/usr/local/lib/python2.7/site-packages/flask/app.py"</cite>,
       line <em class="line">1475</em>,
       in <code class="function">full_dispatch_request</code></h4>
   <pre>rv = self.dispatch_request()</pre>
 </div>
 
-<li><div class="frame" id="frame-139957085516560">
+<li><div class="frame" id="frame-139957079758928">
   <h4>File <cite class="filename">"/usr/local/lib/python2.7/site-packages/flask_debugtoolbar/__init__.py"</cite>,
       line <em class="line">124</em>,
       in <code class="function">dispatch_request</code></h4>
   <pre>return view_func(**req.view_args)</pre>
 </div>
 
-<li><div class="frame" id="frame-139957085516688">
+<li><div class="frame" id="frame-139957079758480">
   <h4>File <cite class="filename">"/usr/src/app/project/main/views.py"</cite>,
       line <em class="line">95</em>,
       in <code class="function">home</code></h4>
@@ -206,39 +206,39 @@ Traceback (most recent call last):
 UnboundLocalError: local variable 'result' referenced before assignment
 
 -->
-I1208 14:25:28.560501     387 http.go:66] SENT    :{"command":"GET whoareyou"}
-I1208 14:25:28.586935     387 http.go:77] RECEIVED:{
+I1209 11:03:57.115652   82854 http.go:66] SENT    :{"command":"GET whoareyou"}
+I1209 11:03:57.142294   82854 http.go:78] RECEIVED:{
   "response": "me"
 }
-I1208 14:25:33.587620     387 http.go:66] SENT    :{"command":"GET whoareyou"}
-I1208 14:25:33.611409     387 http.go:77] RECEIVED:{
+I1209 11:04:02.147101   82854 http.go:66] SENT    :{"command":"GET whoareyou"}
+I1209 11:04:02.174397   82854 http.go:78] RECEIVED:{
   "response": "me"
 }
-I1208 14:26:08.612072     387 http.go:66] SENT    :{"command":"GET whoareyou"}
-I1208 14:26:08.633410     387 http.go:77] RECEIVED:{
+I1209 11:04:37.179527   82854 http.go:66] SENT    :{"command":"GET whoareyou"}
+I1209 11:04:37.202270   82854 http.go:78] RECEIVED:{
   "response": "me"
 }
 FAILED
 ----------------------
 TEST: Delete a key
-I1208 14:26:08.633976     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:08.653036     387 http.go:77] RECEIVED:{
+I1209 11:04:37.202460   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:37.234676   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:08.653750     387 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 14:26:08.673407     387 http.go:77] RECEIVED:{
+I1209 11:04:37.234847   82854 http.go:66] SENT    :{"command":"SET name grokking"}
+I1209 11:04:37.257719   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:08.673764     387 http.go:66] SENT    :{"command":"GET name"}
-I1208 14:26:08.693426     387 http.go:77] RECEIVED:{
+I1209 11:04:37.257873   82854 http.go:66] SENT    :{"command":"GET name"}
+I1209 11:04:37.277468   82854 http.go:78] RECEIVED:{
   "response": "grokking"
 }
-I1208 14:26:08.693870     387 http.go:66] SENT    :{"command":"DEL name"}
-I1208 14:26:08.713899     387 http.go:77] RECEIVED:{
+I1209 11:04:37.277642   82854 http.go:66] SENT    :{"command":"DEL name"}
+I1209 11:04:37.297377   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:08.714052     387 http.go:66] SENT    :{"command":"GET name"}
-I1208 14:26:08.733759     387 http.go:77] RECEIVED:{
+I1209 11:04:37.297560   82854 http.go:66] SENT    :{"command":"GET name"}
+I1209 11:04:37.315799   82854 http.go:78] RECEIVED:{
   "response": "EKTYP"
 }
 PASSED
@@ -248,42 +248,42 @@ PASSED: 2/3
 SUITE: strings
 ----------------------
 TEST: basic SET
-I1208 14:26:08.734477     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:08.753877     387 http.go:77] RECEIVED:{
+I1209 11:04:37.316017   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:37.335022   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:08.754118     387 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 14:26:08.770891     387 http.go:77] RECEIVED:{
+I1209 11:04:37.335184   82854 http.go:66] SENT    :{"command":"SET name grokking"}
+I1209 11:04:37.355905   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
 PASSED
 ----------------------
 TEST: basic GET
-I1208 14:26:08.771335     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:08.788260     387 http.go:77] RECEIVED:{
+I1209 11:04:37.356116   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:37.382115   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:08.788609     387 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 14:26:08.811038     387 http.go:77] RECEIVED:{
+I1209 11:04:37.382281   82854 http.go:66] SENT    :{"command":"SET name grokking"}
+I1209 11:04:37.403664   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:08.811505     387 http.go:66] SENT    :{"command":"SET name engineering"}
-I1208 14:26:08.829868     387 http.go:77] RECEIVED:{
+I1209 11:04:37.403844   82854 http.go:66] SENT    :{"command":"SET name engineering"}
+I1209 11:04:37.424170   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:08.830310     387 http.go:66] SENT    :{"command":"GET name"}
-I1208 14:26:08.851399     387 http.go:77] RECEIVED:{
+I1209 11:04:37.424351   82854 http.go:66] SENT    :{"command":"GET name"}
+I1209 11:04:37.445398   82854 http.go:78] RECEIVED:{
   "response": "engineering"
 }
 PASSED
 ----------------------
 TEST: GET non-existing key
-I1208 14:26:08.851872     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:08.871362     387 http.go:77] RECEIVED:{
+I1209 11:04:37.445612   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:37.464207   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:08.871812     387 http.go:66] SENT    :{"command":"GET notfound"}
-I1208 14:26:08.890663     387 http.go:77] RECEIVED:{
+I1209 11:04:37.464378   82854 http.go:66] SENT    :{"command":"GET notfound"}
+I1209 11:04:37.482551   82854 http.go:78] RECEIVED:{
   "response": "EKTYP"
 }
 PASSED
@@ -293,50 +293,50 @@ PASSED: 3/3
 SUITE: lists
 ----------------------
 TEST: RPUSH to a list
-I1208 14:26:08.891019     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:08.906674     387 http.go:77] RECEIVED:{
+I1209 11:04:37.482785   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:37.502294   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:08.907075     387 http.go:66] SENT    :{"command":"RPUSH programmers huy"}
-I1208 14:26:08.924572     387 http.go:77] RECEIVED:{
+I1209 11:04:37.502518   82854 http.go:66] SENT    :{"command":"RPUSH programmers huy"}
+I1209 11:04:37.521117   82854 http.go:78] RECEIVED:{
   "response": 1
 }
-I1208 14:26:08.924944     387 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
-I1208 14:26:08.941675     387 http.go:77] RECEIVED:{
+I1209 11:04:37.521300   82854 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
+I1209 11:04:37.542568   82854 http.go:78] RECEIVED:{
   "response": 5
 }
 PASSED
 ----------------------
 TEST: RPUSH to a non-list key
-I1208 14:26:08.942213     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:08.958948     387 http.go:77] RECEIVED:{
+I1209 11:04:37.542790   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:37.566455   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:08.959529     387 http.go:66] SENT    :{"command":"SET programmers me"}
-I1208 14:26:08.978633     387 http.go:77] RECEIVED:{
+I1209 11:04:37.566618   82854 http.go:66] SENT    :{"command":"SET programmers me"}
+I1209 11:04:37.586824   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:08.979009     387 http.go:66] SENT    :{"command":"RPUSH programmers huy"}
-I1208 14:26:08.998081     387 http.go:77] RECEIVED:{
+I1209 11:04:37.586969   82854 http.go:66] SENT    :{"command":"RPUSH programmers huy"}
+I1209 11:04:37.606401   82854 http.go:78] RECEIVED:{
   "response": "EINV"
 }
 FAILED
 ----------------------
 TEST: LPOP a list
-I1208 14:26:08.998651     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:09.017204     387 http.go:77] RECEIVED:{
+I1209 11:04:37.606596   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:37.629750   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.017820     387 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
-I1208 14:26:09.035439     387 http.go:77] RECEIVED:{
+I1209 11:04:37.629929   82854 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
+I1209 11:04:37.650713   82854 http.go:78] RECEIVED:{
   "response": 4
 }
-I1208 14:26:09.035811     387 http.go:66] SENT    :{"command":"LPOP programmers"}
-I1208 14:26:09.052868     387 http.go:77] RECEIVED:{
+I1209 11:04:37.650941   82854 http.go:66] SENT    :{"command":"LPOP programmers"}
+I1209 11:04:37.670019   82854 http.go:78] RECEIVED:{
   "response": "loc"
 }
-I1208 14:26:09.053356     387 http.go:66] SENT    :{"command":"LRANGE programmers 0 2"}
-I1208 14:26:09.071552     387 http.go:77] RECEIVED:{
+I1209 11:04:37.670192   82854 http.go:66] SENT    :{"command":"LRANGE programmers 0 2"}
+I1209 11:04:37.690771   82854 http.go:78] RECEIVED:{
   "response": [
     "khiem",
     "minh",
@@ -346,31 +346,31 @@ I1208 14:26:09.071552     387 http.go:77] RECEIVED:{
 PASSED
 ----------------------
 TEST: LPOP non-existing key
-I1208 14:26:09.072242     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:09.089240     387 http.go:77] RECEIVED:{
+I1209 11:04:37.691132   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:37.717507   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.089736     387 http.go:66] SENT    :{"command":"LPOP notfound"}
-I1208 14:26:09.107549     387 http.go:77] RECEIVED:{
+I1209 11:04:37.717671   82854 http.go:66] SENT    :{"command":"LPOP notfound"}
+I1209 11:04:37.752130   82854 http.go:78] RECEIVED:{
   "response": "EKTYP"
 }
 PASSED
 ----------------------
 TEST: RPOP a list
-I1208 14:26:09.108040     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:09.125444     387 http.go:77] RECEIVED:{
+I1209 11:04:37.752311   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:37.771893   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.126079     387 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
-I1208 14:26:09.144550     387 http.go:77] RECEIVED:{
+I1209 11:04:37.772053   82854 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
+I1209 11:04:37.794188   82854 http.go:78] RECEIVED:{
   "response": 4
 }
-I1208 14:26:09.144787     387 http.go:66] SENT    :{"command":"RPOP programmers"}
-I1208 14:26:09.162725     387 http.go:77] RECEIVED:{
+I1209 11:04:37.794356   82854 http.go:66] SENT    :{"command":"RPOP programmers"}
+I1209 11:04:37.817544   82854 http.go:78] RECEIVED:{
   "response": "khanh"
 }
-I1208 14:26:09.162920     387 http.go:66] SENT    :{"command":"LRANGE programmers 0 2"}
-I1208 14:26:09.182967     387 http.go:77] RECEIVED:{
+I1209 11:04:37.817711   82854 http.go:66] SENT    :{"command":"LRANGE programmers 0 2"}
+I1209 11:04:37.838480   82854 http.go:78] RECEIVED:{
   "response": [
     "loc",
     "khiem",
@@ -380,34 +380,34 @@ I1208 14:26:09.182967     387 http.go:77] RECEIVED:{
 PASSED
 ----------------------
 TEST: RPOP non-existing key
-I1208 14:26:09.183186     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:09.202639     387 http.go:77] RECEIVED:{
+I1209 11:04:37.838779   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:37.864126   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.203080     387 http.go:66] SENT    :{"command":"RPOP notfound"}
-I1208 14:26:09.220140     387 http.go:77] RECEIVED:{
+I1209 11:04:37.864293   82854 http.go:66] SENT    :{"command":"RPOP notfound"}
+I1209 11:04:37.887645   82854 http.go:78] RECEIVED:{
   "response": "EKTYP"
 }
 PASSED
 ----------------------
 TEST: LRANGE a list
-I1208 14:26:09.220408     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:09.237531     387 http.go:77] RECEIVED:{
+I1209 11:04:37.887839   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:37.913867   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.237844     387 http.go:66] SENT    :{"command":"RPUSH languages ruby python c cpp golang java"}
-I1208 14:26:09.255113     387 http.go:77] RECEIVED:{
+I1209 11:04:37.914045   82854 http.go:66] SENT    :{"command":"RPUSH languages ruby python c cpp golang java"}
+I1209 11:04:37.934059   82854 http.go:78] RECEIVED:{
   "response": 6
 }
-I1208 14:26:09.255593     387 http.go:66] SENT    :{"command":"LRANGE languages 0 1"}
-I1208 14:26:09.272208     387 http.go:77] RECEIVED:{
+I1209 11:04:37.934232   82854 http.go:66] SENT    :{"command":"LRANGE languages 0 1"}
+I1209 11:04:37.956784   82854 http.go:78] RECEIVED:{
   "response": [
     "ruby",
     "python"
   ]
 }
-I1208 14:26:09.272618     387 http.go:66] SENT    :{"command":"LRANGE languages 2 4"}
-I1208 14:26:09.289194     387 http.go:77] RECEIVED:{
+I1209 11:04:37.957024   82854 http.go:66] SENT    :{"command":"LRANGE languages 2 4"}
+I1209 11:04:37.979088   82854 http.go:78] RECEIVED:{
   "response": [
     "c",
     "cpp",
@@ -417,53 +417,53 @@ I1208 14:26:09.289194     387 http.go:77] RECEIVED:{
 PASSED
 ----------------------
 TEST: LRANGE non-existing list
-I1208 14:26:09.289772     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:09.306553     387 http.go:77] RECEIVED:{
+I1209 11:04:37.979486   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:38.009065   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.306993     387 http.go:66] SENT    :{"command":"LRANGE notfound 0 1"}
-I1208 14:26:09.323583     387 http.go:77] RECEIVED:{
+I1209 11:04:38.009257   82854 http.go:66] SENT    :{"command":"LRANGE notfound 0 1"}
+I1209 11:04:38.033673   82854 http.go:78] RECEIVED:{
   "response": "EKTYP"
 }
 PASSED
 ----------------------
 TEST: LRANGE with invalid range
-I1208 14:26:09.324056     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:09.341778     387 http.go:77] RECEIVED:{
+I1209 11:04:38.033875   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:38.065355   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.342190     387 http.go:66] SENT    :{"command":"RPUSH languages ruby"}
-I1208 14:26:09.360918     387 http.go:77] RECEIVED:{
+I1209 11:04:38.065528   82854 http.go:66] SENT    :{"command":"RPUSH languages ruby"}
+I1209 11:04:38.094870   82854 http.go:78] RECEIVED:{
   "response": 1
 }
-I1208 14:26:09.361342     387 http.go:66] SENT    :{"command":"LRANGE languages 2 4"}
-I1208 14:26:09.377491     387 http.go:77] RECEIVED:{
+I1209 11:04:38.095050   82854 http.go:66] SENT    :{"command":"LRANGE languages 2 4"}
+I1209 11:04:38.113680   82854 http.go:78] RECEIVED:{
   "response": []
 }
 FAILED
 ----------------------
 TEST: LLEN a list
-I1208 14:26:09.377779     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:09.397017     387 http.go:77] RECEIVED:{
+I1209 11:04:38.113884   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:38.135423   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.397715     387 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
-I1208 14:26:09.420179     387 http.go:77] RECEIVED:{
+I1209 11:04:38.135589   82854 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
+I1209 11:04:38.160429   82854 http.go:78] RECEIVED:{
   "response": 4
 }
-I1208 14:26:09.420598     387 http.go:66] SENT    :{"command":"LLEN programmers"}
-I1208 14:26:09.442725     387 http.go:77] RECEIVED:{
+I1209 11:04:38.160605   82854 http.go:66] SENT    :{"command":"LLEN programmers"}
+I1209 11:04:38.187451   82854 http.go:78] RECEIVED:{
   "response": 4
 }
 PASSED
 ----------------------
 TEST: LLEN non-existing key
-I1208 14:26:09.443208     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:09.459876     387 http.go:77] RECEIVED:{
+I1209 11:04:38.187673   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:38.208339   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.460220     387 http.go:66] SENT    :{"command":"LLEN notfound"}
-I1208 14:26:09.481239     387 http.go:77] RECEIVED:{
+I1209 11:04:38.208523   82854 http.go:66] SENT    :{"command":"LLEN notfound"}
+I1209 11:04:38.233411   82854 http.go:78] RECEIVED:{
   "response": "EKTYP"
 }
 PASSED
@@ -473,110 +473,110 @@ PASSED: 9/11
 SUITE: sets
 ----------------------
 TEST: SADD creates a set
-I1208 14:26:09.481515     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:09.497989     387 http.go:77] RECEIVED:{
+I1209 11:04:38.233628   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:38.261912   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.498142     387 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
-I1208 14:26:09.516820     387 http.go:77] RECEIVED:{
+I1209 11:04:38.262096   82854 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
+I1209 11:04:38.283887   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
 PASSED
 ----------------------
 TEST: SADD wrong key type
-I1208 14:26:09.517004     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:09.537949     387 http.go:77] RECEIVED:{
+I1209 11:04:38.284083   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:38.304682   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.538220     387 http.go:66] SENT    :{"command":"SET asean asean"}
-I1208 14:26:09.558352     387 http.go:77] RECEIVED:{
+I1209 11:04:38.304861   82854 http.go:66] SENT    :{"command":"SET asean asean"}
+I1209 11:04:38.346082   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.558504     387 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
-I1208 14:26:09.575954     387 http.go:77] RECEIVED:{
+I1209 11:04:38.346242   82854 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
+I1209 11:04:38.378234   82854 http.go:78] RECEIVED:{
   "response": "EINV"
 }
 FAILED
 ----------------------
 TEST: SREM removes members from a set
-I1208 14:26:09.576163     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:09.592201     387 http.go:77] RECEIVED:{
+I1209 11:04:38.378599   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:38.401327   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.592398     387 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
-I1208 14:26:09.611447     387 http.go:77] RECEIVED:{
+I1209 11:04:38.401484   82854 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1209 11:04:38.424871   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.611637     387 http.go:66] SENT    :{"command":"SREM myset a b"}
-I1208 14:26:09.631682     387 http.go:77] RECEIVED:{
+I1209 11:04:38.425079   82854 http.go:66] SENT    :{"command":"SREM myset a b"}
+I1209 11:04:38.444837   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
 PASSED
 ----------------------
 TEST: SCARD queries a set size
-I1208 14:26:09.632126     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:09.652151     387 http.go:77] RECEIVED:{
+I1209 11:04:38.445054   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:38.466249   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.652513     387 http.go:66] SENT    :{"command":"SADD myset a b c d"}
-I1208 14:26:09.671609     387 http.go:77] RECEIVED:{
+I1209 11:04:38.466429   82854 http.go:66] SENT    :{"command":"SADD myset a b c d"}
+I1209 11:04:38.486430   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.671960     387 http.go:66] SENT    :{"command":"SCARD myset"}
-I1208 14:26:09.690799     387 http.go:77] RECEIVED:{
+I1209 11:04:38.486620   82854 http.go:66] SENT    :{"command":"SCARD myset"}
+I1209 11:04:38.507507   82854 http.go:78] RECEIVED:{
   "response": 4
 }
 PASSED
 ----------------------
 TEST: SCARD wrong key type
-I1208 14:26:09.691570     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:09.709963     387 http.go:77] RECEIVED:{
+I1209 11:04:38.507749   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:38.526862   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.710278     387 http.go:66] SENT    :{"command":"RPUSH mylist a b c d"}
-I1208 14:26:09.729124     387 http.go:77] RECEIVED:{
+I1209 11:04:38.527030   82854 http.go:66] SENT    :{"command":"RPUSH mylist a b c d"}
+I1209 11:04:38.551098   82854 http.go:78] RECEIVED:{
   "response": 4
 }
-I1208 14:26:09.729378     387 http.go:66] SENT    :{"command":"SCARD mylist"}
-I1208 14:26:09.746906     387 http.go:77] RECEIVED:{
+I1209 11:04:38.551260   82854 http.go:66] SENT    :{"command":"SCARD mylist"}
+I1209 11:04:38.571566   82854 http.go:78] RECEIVED:{
   "response": "EKTYP"
 }
 PASSED
 ----------------------
 TEST: SInter intersects sets
-I1208 14:26:09.747337     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:09.765525     387 http.go:77] RECEIVED:{
+I1209 11:04:38.571811   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:38.599247   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.765894     387 http.go:66] SENT    :{"command":"SADD myseta a b c d e"}
-I1208 14:26:09.786303     387 http.go:77] RECEIVED:{
+I1209 11:04:38.599415   82854 http.go:66] SENT    :{"command":"SADD myseta a b c d e"}
+I1209 11:04:38.626410   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.786661     387 http.go:66] SENT    :{"command":"SADD mysetb a b c"}
-I1208 14:26:09.806126     387 http.go:77] RECEIVED:{
+I1209 11:04:38.626577   82854 http.go:66] SENT    :{"command":"SADD mysetb a b c"}
+I1209 11:04:38.648132   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.806260     387 http.go:66] SENT    :{"command":"SADD mysetc a"}
-I1208 14:26:09.823356     387 http.go:77] RECEIVED:{
+I1209 11:04:38.648297   82854 http.go:66] SENT    :{"command":"SADD mysetc a"}
+I1209 11:04:38.685658   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.823492     387 http.go:66] SENT    :{"command":"SINTER myseta mysetb mysetc"}
-I1208 14:26:09.849390     387 http.go:77] RECEIVED:{
+I1209 11:04:38.685840   82854 http.go:66] SENT    :{"command":"SINTER myseta mysetb mysetc"}
+I1209 11:04:38.707239   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
 FAILED
 ----------------------
 TEST: SMEMBERS queries a set's members
-I1208 14:26:09.850248     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:09.897544     387 http.go:77] RECEIVED:{
+I1209 11:04:38.707483   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:38.726610   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.897956     387 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
-I1208 14:26:09.917199     387 http.go:77] RECEIVED:{
+I1209 11:04:38.726786   82854 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1209 11:04:38.761205   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.917714     387 http.go:66] SENT    :{"command":"SMEMBERS myset"}
-I1208 14:26:09.935609     387 http.go:77] RECEIVED:{
+I1209 11:04:38.761376   82854 http.go:66] SENT    :{"command":"SMEMBERS myset"}
+I1209 11:04:38.790528   82854 http.go:78] RECEIVED:{
   "response": [
     "a",
     "b",
@@ -588,20 +588,20 @@ I1208 14:26:09.935609     387 http.go:77] RECEIVED:{
 PASSED
 ----------------------
 TEST: SREM and then SMEMBERS to query result
-I1208 14:26:09.936308     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:09.954431     387 http.go:77] RECEIVED:{
+I1209 11:04:38.790879   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:38.810058   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.954863     387 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
-I1208 14:26:09.975319     387 http.go:77] RECEIVED:{
+I1209 11:04:38.810216   82854 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1209 11:04:38.829047   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.975537     387 http.go:66] SENT    :{"command":"SREM myset a b"}
-I1208 14:26:09.994053     387 http.go:77] RECEIVED:{
+I1209 11:04:38.829226   82854 http.go:66] SENT    :{"command":"SREM myset a b"}
+I1209 11:04:38.867089   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:09.994307     387 http.go:66] SENT    :{"command":"SMEMBERS myset"}
-I1208 14:26:10.015716     387 http.go:77] RECEIVED:{
+I1209 11:04:38.867284   82854 http.go:66] SENT    :{"command":"SMEMBERS myset"}
+I1209 11:04:38.888457   82854 http.go:78] RECEIVED:{
   "response": [
     "c",
     "d",
@@ -615,36 +615,36 @@ PASSED: 6/8
 SUITE: save
 ----------------------
 TEST: Save and restore
-I1208 14:26:10.017628     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:10.043691     387 http.go:77] RECEIVED:{
+I1209 11:04:38.888770   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:38.911705   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:10.044146     387 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 14:26:10.065039     387 http.go:77] RECEIVED:{
+I1209 11:04:38.911906   82854 http.go:66] SENT    :{"command":"SET name grokking"}
+I1209 11:04:38.932921   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:10.065582     387 http.go:66] SENT    :{"command":"RPUSH colors green blue red white"}
-I1208 14:26:10.086660     387 http.go:77] RECEIVED:{
+I1209 11:04:38.933112   82854 http.go:66] SENT    :{"command":"RPUSH colors green blue red white"}
+I1209 11:04:38.959636   82854 http.go:78] RECEIVED:{
   "response": 4
 }
-I1208 14:26:10.086818     387 http.go:66] SENT    :{"command":"SADD countries vietnam singapore vietnam"}
-I1208 14:26:10.102995     387 http.go:77] RECEIVED:{
+I1209 11:04:38.959828   82854 http.go:66] SENT    :{"command":"SADD countries vietnam singapore vietnam"}
+I1209 11:04:38.981207   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:10.103360     387 http.go:66] SENT    :{"command":"SAVE"}
-I1208 14:26:10.122926     387 http.go:77] RECEIVED:{
+I1209 11:04:38.981385   82854 http.go:66] SENT    :{"command":"SAVE"}
+I1209 11:04:39.003009   82854 http.go:78] RECEIVED:{
   "response": "EINV"
 }
-I1208 14:26:10.123279     387 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:26:10.142120     387 http.go:77] RECEIVED:{
+I1209 11:04:39.003142   82854 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:04:39.023228   82854 http.go:78] RECEIVED:{
   "response": "OK"
 }
-I1208 14:26:10.142588     387 http.go:66] SENT    :{"command":"RESTORE"}
-I1208 14:26:10.159736     387 http.go:77] RECEIVED:{
+I1209 11:04:39.023404   82854 http.go:66] SENT    :{"command":"RESTORE"}
+I1209 11:04:39.044375   82854 http.go:78] RECEIVED:{
   "response": "EINV"
 }
-I1208 14:26:10.160056     387 http.go:66] SENT    :{"command":"GET name"}
-I1208 14:26:10.178669     387 http.go:77] RECEIVED:{
+I1209 11:04:39.044524   82854 http.go:66] SENT    :{"command":"GET name"}
+I1209 11:04:39.064899   82854 http.go:78] RECEIVED:{
   "response": "EKTYP"
 }
 FAILED

@@ -2,32 +2,32 @@
 SUITE: general
 ----------------------
 TEST: FLUSHDB clear all key
-I1208 13:28:19.637401   29327 http.go:66] SENT    :{"command":"SET s a"}
-I1208 13:28:19.653336   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.556210   83270 http.go:66] SENT    :{"command":"SET s a"}
+I1209 11:05:41.576583   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.653668   29327 http.go:66] SENT    :{"command":"RPUSH k b"}
-I1208 13:28:19.683776   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.576681   83270 http.go:66] SENT    :{"command":"RPUSH k b"}
+I1209 11:05:41.589439   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.684012   29327 http.go:66] SENT    :{"command":"SADD z c"}
-I1208 13:28:19.693961   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.589571   83270 http.go:66] SENT    :{"command":"SADD z c"}
+I1209 11:05:41.596778   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.694222   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.700774   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.596927   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:41.604796   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -37,32 +37,32 @@ I1208 13:28:19.700774   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: EXPIRE key after 30 seconds
-I1208 13:28:19.701138   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.706958   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.604946   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:41.621696   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.707182   29327 http.go:66] SENT    :{"command":"SET whoareyou me"}
-I1208 13:28:19.714412   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.621805   83270 http.go:66] SENT    :{"command":"SET whoareyou me"}
+I1209 11:05:41.660505   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.714683   29327 http.go:66] SENT    :{"command":"EXPIRE whoareyou 30"}
-I1208 13:28:19.721331   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.660643   83270 http.go:66] SENT    :{"command":"EXPIRE whoareyou 30"}
+I1209 11:05:41.669367   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.721569   29327 http.go:66] SENT    :{"command":"GET whoareyou"}
-I1208 13:28:19.727813   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.669484   83270 http.go:66] SENT    :{"command":"GET whoareyou"}
+I1209 11:05:41.683148   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -72,24 +72,24 @@ I1208 13:28:19.727813   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: Delete a key
-I1208 13:28:19.728142   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.733093   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.683321   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:41.691207   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.733355   29327 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 13:28:19.738308   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.691316   83270 http.go:66] SENT    :{"command":"SET name grokking"}
+I1209 11:05:41.700054   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.738504   29327 http.go:66] SENT    :{"command":"GET name"}
-I1208 13:28:19.745254   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.700166   83270 http.go:66] SENT    :{"command":"GET name"}
+I1209 11:05:41.707775   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -103,16 +103,16 @@ PASSED: 0/3
 SUITE: strings
 ----------------------
 TEST: basic SET
-I1208 13:28:19.745744   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.751472   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.707965   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:41.715582   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.751676   29327 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 13:28:19.757888   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.715690   83270 http.go:66] SENT    :{"command":"SET name grokking"}
+I1209 11:05:41.722784   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -122,32 +122,32 @@ I1208 13:28:19.757888   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: basic GET
-I1208 13:28:19.758164   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.764527   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.722951   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:41.740630   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.764729   29327 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 13:28:19.769694   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.740766   83270 http.go:66] SENT    :{"command":"SET name grokking"}
+I1209 11:05:41.758457   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.769888   29327 http.go:66] SENT    :{"command":"SET name engineering"}
-I1208 13:28:19.780772   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.758567   83270 http.go:66] SENT    :{"command":"SET name engineering"}
+I1209 11:05:41.766269   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.781109   29327 http.go:66] SENT    :{"command":"GET name"}
-I1208 13:28:19.793707   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.766382   83270 http.go:66] SENT    :{"command":"GET name"}
+I1209 11:05:41.773675   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -157,8 +157,8 @@ I1208 13:28:19.793707   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: GET non-existing key
-I1208 13:28:19.794159   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.801975   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.773828   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:41.781128   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -172,8 +172,8 @@ PASSED: 0/3
 SUITE: lists
 ----------------------
 TEST: RPUSH to a list
-I1208 13:28:19.802171   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.806091   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.781308   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:41.788797   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -183,8 +183,8 @@ I1208 13:28:19.806091   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: RPUSH to a non-list key
-I1208 13:28:19.806244   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.824756   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:41.788947   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.002504   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -194,24 +194,24 @@ I1208 13:28:19.824756   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: LPOP a list
-I1208 13:28:19.825082   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.864925   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.002757   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.011124   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.865145   29327 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
-I1208 13:28:19.871053   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.011253   83270 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
+I1209 11:05:42.019313   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.871248   29327 http.go:66] SENT    :{"command":"LPOP programmers"}
-I1208 13:28:19.876322   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.019418   83270 http.go:66] SENT    :{"command":"LPOP programmers"}
+I1209 11:05:42.028372   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -221,16 +221,16 @@ I1208 13:28:19.876322   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: LPOP non-existing key
-I1208 13:28:19.876593   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.887519   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.028519   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.036579   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.887721   29327 http.go:66] SENT    :{"command":"LPOP notfound"}
-I1208 13:28:19.893637   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.036694   83270 http.go:66] SENT    :{"command":"LPOP notfound"}
+I1209 11:05:42.045597   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -240,8 +240,8 @@ I1208 13:28:19.893637   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: RPOP a list
-I1208 13:28:19.893945   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.899749   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.045785   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.059821   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -251,8 +251,8 @@ I1208 13:28:19.899749   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: RPOP non-existing key
-I1208 13:28:19.900055   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.905381   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.059960   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.076404   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -262,24 +262,24 @@ I1208 13:28:19.905381   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: LRANGE a list
-I1208 13:28:19.905661   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.910591   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.076580   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.085531   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.910818   29327 http.go:66] SENT    :{"command":"RPUSH languages ruby python c cpp golang java"}
-I1208 13:28:19.915867   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.085654   83270 http.go:66] SENT    :{"command":"RPUSH languages ruby python c cpp golang java"}
+I1209 11:05:42.095901   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.916061   29327 http.go:66] SENT    :{"command":"LRANGE languages 0 1"}
-I1208 13:28:19.925231   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.096003   83270 http.go:66] SENT    :{"command":"LRANGE languages 0 1"}
+I1209 11:05:42.104162   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -289,16 +289,16 @@ I1208 13:28:19.925231   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: LRANGE non-existing list
-I1208 13:28:19.925561   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.941630   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.104310   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.112107   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.941828   29327 http.go:66] SENT    :{"command":"LRANGE notfound 0 1"}
-I1208 13:28:19.947562   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.112225   83270 http.go:66] SENT    :{"command":"LRANGE notfound 0 1"}
+I1209 11:05:42.120271   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -308,24 +308,24 @@ I1208 13:28:19.947562   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: LRANGE with invalid range
-I1208 13:28:19.947832   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.955805   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.120427   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.127673   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.956090   29327 http.go:66] SENT    :{"command":"RPUSH languages ruby"}
-I1208 13:28:19.966007   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.127783   83270 http.go:66] SENT    :{"command":"RPUSH languages ruby"}
+I1209 11:05:42.134892   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.966208   29327 http.go:66] SENT    :{"command":"LRANGE languages 2 4"}
-I1208 13:28:19.971248   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.135015   83270 http.go:66] SENT    :{"command":"LRANGE languages 2 4"}
+I1209 11:05:42.142541   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -335,8 +335,8 @@ I1208 13:28:19.971248   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: LLEN a list
-I1208 13:28:19.971515   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.976552   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.142693   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.354757   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -346,16 +346,16 @@ I1208 13:28:19.976552   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: LLEN non-existing key
-I1208 13:28:19.976829   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.981869   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.354902   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.362406   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.982097   29327 http.go:66] SENT    :{"command":"LLEN notfound"}
-I1208 13:28:19.986588   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.362541   83270 http.go:66] SENT    :{"command":"LLEN notfound"}
+I1209 11:05:42.369802   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -369,16 +369,16 @@ PASSED: 0/11
 SUITE: sets
 ----------------------
 TEST: SADD creates a set
-I1208 13:28:19.986936   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:19.992654   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.369993   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.377295   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:19.992884   29327 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
-I1208 13:28:19.998539   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.377424   83270 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
+I1209 11:05:42.384627   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -388,24 +388,24 @@ I1208 13:28:19.998539   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: SADD wrong key type
-I1208 13:28:19.998826   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:20.003954   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.384767   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.392006   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.004189   29327 http.go:66] SENT    :{"command":"SET asean asean"}
-I1208 13:28:20.010671   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.392115   83270 http.go:66] SENT    :{"command":"SET asean asean"}
+I1209 11:05:42.399701   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.010875   29327 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
-I1208 13:28:20.015800   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.399829   83270 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
+I1209 11:05:42.407333   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -415,24 +415,24 @@ I1208 13:28:20.015800   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: SREM removes members from a set
-I1208 13:28:20.016061   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:20.024896   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.407490   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.414537   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.025209   29327 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
-I1208 13:28:20.037143   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.414647   83270 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1209 11:05:42.429257   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.037423   29327 http.go:66] SENT    :{"command":"SREM myset a b"}
-I1208 13:28:20.047718   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.429371   83270 http.go:66] SENT    :{"command":"SREM myset a b"}
+I1209 11:05:42.436787   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -442,24 +442,24 @@ I1208 13:28:20.047718   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: SCARD queries a set size
-I1208 13:28:20.048008   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:20.055636   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.436961   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.444420   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.055840   29327 http.go:66] SENT    :{"command":"SADD myset a b c d"}
-I1208 13:28:20.068875   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.444526   83270 http.go:66] SENT    :{"command":"SADD myset a b c d"}
+I1209 11:05:42.451585   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.069082   29327 http.go:66] SENT    :{"command":"SCARD myset"}
-I1208 13:28:20.074207   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.451701   83270 http.go:66] SENT    :{"command":"SCARD myset"}
+I1209 11:05:42.458868   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -469,24 +469,24 @@ I1208 13:28:20.074207   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: SCARD wrong key type
-I1208 13:28:20.074509   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:20.079532   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.459040   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.467533   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.079734   29327 http.go:66] SENT    :{"command":"RPUSH mylist a b c d"}
-I1208 13:28:20.084819   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.467659   83270 http.go:66] SENT    :{"command":"RPUSH mylist a b c d"}
+I1209 11:05:42.475303   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.085015   29327 http.go:66] SENT    :{"command":"SCARD mylist"}
-I1208 13:28:20.092597   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.475422   83270 http.go:66] SENT    :{"command":"SCARD mylist"}
+I1209 11:05:42.482787   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -496,40 +496,40 @@ I1208 13:28:20.092597   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: SInter intersects sets
-I1208 13:28:20.092904   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:20.098351   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.482938   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.495680   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.098550   29327 http.go:66] SENT    :{"command":"SADD myseta a b c d e"}
-I1208 13:28:20.103595   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.495780   83270 http.go:66] SENT    :{"command":"SADD myseta a b c d e"}
+I1209 11:05:42.504805   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.103802   29327 http.go:66] SENT    :{"command":"SADD mysetb a b c"}
-I1208 13:28:20.109332   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.504930   83270 http.go:66] SENT    :{"command":"SADD mysetb a b c"}
+I1209 11:05:42.512423   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.109576   29327 http.go:66] SENT    :{"command":"SADD mysetc a"}
-I1208 13:28:20.114224   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.512529   83270 http.go:66] SENT    :{"command":"SADD mysetc a"}
+I1209 11:05:42.522861   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.114447   29327 http.go:66] SENT    :{"command":"SINTER myseta mysetb mysetc"}
-I1208 13:28:20.119958   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.522977   83270 http.go:66] SENT    :{"command":"SINTER myseta mysetb mysetc"}
+I1209 11:05:42.531686   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -539,24 +539,24 @@ I1208 13:28:20.119958   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: SMEMBERS queries a set's members
-I1208 13:28:20.120301   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:20.130808   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.531828   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.538680   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.131026   29327 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
-I1208 13:28:20.136683   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.538784   83270 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1209 11:05:42.546055   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.136908   29327 http.go:66] SENT    :{"command":"SMEMBERS myset"}
-I1208 13:28:20.145419   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.546171   83270 http.go:66] SENT    :{"command":"SMEMBERS myset"}
+I1209 11:05:42.554891   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -566,32 +566,32 @@ I1208 13:28:20.145419   29327 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: SREM and then SMEMBERS to query result
-I1208 13:28:20.145721   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:20.158162   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.555058   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.562062   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.158428   29327 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
-I1208 13:28:20.164345   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.562180   83270 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1209 11:05:42.578118   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.164549   29327 http.go:66] SENT    :{"command":"SREM myset a b"}
-I1208 13:28:20.172295   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.578367   83270 http.go:66] SENT    :{"command":"SREM myset a b"}
+I1209 11:05:42.595527   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.172500   29327 http.go:66] SENT    :{"command":"SMEMBERS myset"}
-I1208 13:28:20.178636   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.595631   83270 http.go:66] SENT    :{"command":"SMEMBERS myset"}
+I1209 11:05:42.613317   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
@@ -605,64 +605,64 @@ PASSED: 0/8
 SUITE: save
 ----------------------
 TEST: Save and restore
-I1208 13:28:20.179033   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:20.193158   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.613522   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.638656   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.193467   29327 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 13:28:20.212733   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.638753   83270 http.go:66] SENT    :{"command":"SET name grokking"}
+I1209 11:05:42.645571   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.212960   29327 http.go:66] SENT    :{"command":"RPUSH colors green blue red white"}
-I1208 13:28:20.219001   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.645682   83270 http.go:66] SENT    :{"command":"RPUSH colors green blue red white"}
+I1209 11:05:42.653309   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.219251   29327 http.go:66] SENT    :{"command":"SADD countries vietnam singapore vietnam"}
-I1208 13:28:20.225159   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.653427   83270 http.go:66] SENT    :{"command":"SADD countries vietnam singapore vietnam"}
+I1209 11:05:42.661955   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.225396   29327 http.go:66] SENT    :{"command":"SAVE"}
-I1208 13:28:20.232570   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.662064   83270 http.go:66] SENT    :{"command":"SAVE"}
+I1209 11:05:42.669780   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.232798   29327 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:20.238371   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.669887   83270 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:05:42.676947   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.238567   29327 http.go:66] SENT    :{"command":"RESTORE"}
-I1208 13:28:20.243868   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.677066   83270 http.go:66] SENT    :{"command":"RESTORE"}
+I1209 11:05:42.684645   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:20.244063   29327 http.go:66] SENT    :{"command":"GET name"}
-I1208 13:28:20.258672   29327 http.go:77] RECEIVED:<html>
+I1209 11:05:42.684761   83270 http.go:66] SENT    :{"command":"GET name"}
+I1209 11:05:42.692338   83270 http.go:78] RECEIVED:<html>
 <head><title>404 Not Found</title></head>
 <body bgcolor="white">
 <center><h1>404 Not Found</h1></center>

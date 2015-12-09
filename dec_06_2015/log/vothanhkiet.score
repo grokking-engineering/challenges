@@ -1,242 +1,262 @@
 #################################
 SUITE: general
 ----------------------
-TEST: FLUSHDB clear all key
-I1208 14:45:23.480456    1653 http.go:66] SENT    :{"command":"SET s a"}
-I1208 14:45:23.504598    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.505045    1653 http.go:66] SENT    :{"command":"RPUSH k b"}
-I1208 14:45:23.512208    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.512478    1653 http.go:66] SENT    :{"command":"SADD z c"}
-I1208 14:45:23.518805    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.519065    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.525422    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-FAILED
+TEST: flushdb clear all key
+I1209 10:54:52.616898   79887 http.go:66] SENT    :{"command":"set s a"}
+I1209 10:54:52.645312   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.645487   79887 http.go:66] SENT    :{"command":"rpush k b"}
+I1209 10:54:52.663498   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.663962   79887 http.go:66] SENT    :{"command":"sadd z c"}
+I1209 10:54:52.673515   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.673700   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:52.682028   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.682182   79887 http.go:66] SENT    :{"command":"get s"}
+I1209 10:54:52.712387   79887 http.go:78] RECEIVED:{"response":"EKTYP"}
+I1209 10:54:52.712524   79887 http.go:66] SENT    :{"command":"get k"}
+I1209 10:54:52.721697   79887 http.go:78] RECEIVED:{"response":"EKTYP"}
+I1209 10:54:52.721829   79887 http.go:66] SENT    :{"command":"get z"}
+I1209 10:54:52.762910   79887 http.go:78] RECEIVED:{"response":"EKTYP"}
+PASSED
 ----------------------
-TEST: EXPIRE key after 30 seconds
-I1208 14:45:23.525814    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.531996    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.532268    1653 http.go:66] SENT    :{"command":"SET whoareyou me"}
-I1208 14:45:23.538585    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.538914    1653 http.go:66] SENT    :{"command":"EXPIRE whoareyou 30"}
-I1208 14:45:23.545112    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.545440    1653 http.go:66] SENT    :{"command":"GET whoareyou"}
-I1208 14:45:23.551796    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: expire key after 30 seconds
+I1209 10:54:52.763091   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:52.772693   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.772853   79887 http.go:66] SENT    :{"command":"set whoareyou me"}
+I1209 10:54:52.786205   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.786352   79887 http.go:66] SENT    :{"command":"expire whoareyou 30"}
+I1209 10:54:52.796583   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.796736   79887 http.go:66] SENT    :{"command":"get whoareyou"}
+I1209 10:54:52.807902   79887 http.go:78] RECEIVED:{"response":"EKTYP"}
 FAILED
 ----------------------
 TEST: Delete a key
-I1208 14:45:23.552214    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.558303    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.558616    1653 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 14:45:23.564850    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.565158    1653 http.go:66] SENT    :{"command":"GET name"}
-I1208 14:45:23.571444    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+I1209 10:54:52.808069   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:52.817851   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.817991   79887 http.go:66] SENT    :{"command":"set name grokking"}
+I1209 10:54:52.826425   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.826574   79887 http.go:66] SENT    :{"command":"get name"}
+I1209 10:54:52.836410   79887 http.go:78] RECEIVED:{"response":"EKTYP"}
 FAILED
 
-PASSED: 0/3
+PASSED: 1/3
 #################################
 SUITE: strings
 ----------------------
-TEST: basic SET
-I1208 14:45:23.571960    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.578070    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.578332    1653 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 14:45:23.584563    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: basic set
+I1209 10:54:52.836621   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:52.845211   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.845363   79887 http.go:66] SENT    :{"command":"set name grokking"}
+I1209 10:54:52.855046   79887 http.go:78] RECEIVED:{"response":"OK"}
+PASSED
+----------------------
+TEST: basic get
+I1209 10:54:52.855259   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:52.864346   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.864488   79887 http.go:66] SENT    :{"command":"set name grokking"}
+I1209 10:54:52.873217   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.873363   79887 http.go:66] SENT    :{"command":"set name engineering"}
+I1209 10:54:52.882932   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.883080   79887 http.go:66] SENT    :{"command":"get name"}
+I1209 10:54:52.892357   79887 http.go:78] RECEIVED:{"response":"EKTYP"}
 FAILED
 ----------------------
-TEST: basic GET
-I1208 14:45:23.584923    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.592998    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.593431    1653 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 14:45:23.600524    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.600816    1653 http.go:66] SENT    :{"command":"SET name engineering"}
-I1208 14:45:23.606853    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.607112    1653 http.go:66] SENT    :{"command":"GET name"}
-I1208 14:45:23.613564    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-FAILED
-----------------------
-TEST: GET non-existing key
-I1208 14:45:23.613914    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.619933    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-FAILED
+TEST: get non-existing key
+I1209 10:54:52.892542   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:52.903206   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.903349   79887 http.go:66] SENT    :{"command":"get notfound"}
+I1209 10:54:52.912383   79887 http.go:78] RECEIVED:{"response":"EKTYP"}
+PASSED
 
-PASSED: 0/3
+PASSED: 2/3
 #################################
 SUITE: lists
 ----------------------
-TEST: RPUSH to a list
-I1208 14:45:23.620358    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.626647    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: rpush to a list
+I1209 10:54:52.912603   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:52.928601   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.928750   79887 http.go:66] SENT    :{"command":"rpush programmers huy"}
+I1209 10:54:52.937185   79887 http.go:78] RECEIVED:{"response":"OK"}
 FAILED
 ----------------------
-TEST: RPUSH to a non-list key
-I1208 14:45:23.627001    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.634142    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: rpush to a non-list key
+I1209 10:54:52.937393   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:52.946196   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.946339   79887 http.go:66] SENT    :{"command":"set programmers me"}
+I1209 10:54:52.954542   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.954684   79887 http.go:66] SENT    :{"command":"rpush programmers huy"}
+I1209 10:54:52.963308   79887 http.go:78] RECEIVED:{"response":"OK"}
 FAILED
 ----------------------
-TEST: LPOP a list
-I1208 14:45:23.634485    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.641061    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.641363    1653 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
-I1208 14:45:23.651660    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.651919    1653 http.go:66] SENT    :{"command":"LPOP programmers"}
-I1208 14:45:23.659255    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: lpop a list
+I1209 10:54:52.963499   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:52.971607   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.971783   79887 http.go:66] SENT    :{"command":"rpush programmers loc khiem minh khanh"}
+I1209 10:54:52.981962   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:52.982126   79887 http.go:66] SENT    :{"command":"lpop programmers"}
+I1209 10:54:52.991107   79887 http.go:78] RECEIVED:{"response":"OK"}
 FAILED
 ----------------------
-TEST: LPOP non-existing key
-I1208 14:45:23.659633    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.666135    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.666392    1653 http.go:66] SENT    :{"command":"LPOP notfound"}
-I1208 14:45:23.672712    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: lpop non-existing key
+I1209 10:54:52.991302   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:52.999874   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.000018   79887 http.go:66] SENT    :{"command":"lpop notfound"}
+I1209 10:54:53.012902   79887 http.go:78] RECEIVED:{"response":"OK"}
 FAILED
 ----------------------
-TEST: RPOP a list
-I1208 14:45:23.673053    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.679298    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: rpop a list
+I1209 10:54:53.013081   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:53.031374   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.031528   79887 http.go:66] SENT    :{"command":"rpush programmers loc khiem minh khanh"}
+I1209 10:54:53.048358   79887 http.go:78] RECEIVED:{"response":"OK"}
 FAILED
 ----------------------
-TEST: RPOP non-existing key
-I1208 14:45:23.679619    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.685926    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: rpop non-existing key
+I1209 10:54:53.048567   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:53.057612   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.057773   79887 http.go:66] SENT    :{"command":"rpop notfound"}
+I1209 10:54:53.065917   79887 http.go:78] RECEIVED:{"response":"OK"}
 FAILED
 ----------------------
-TEST: LRANGE a list
-I1208 14:45:23.686260    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.693476    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.693742    1653 http.go:66] SENT    :{"command":"RPUSH languages ruby python c cpp golang java"}
-I1208 14:45:23.702322    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.702690    1653 http.go:66] SENT    :{"command":"LRANGE languages 0 1"}
-I1208 14:45:23.711089    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: lrange a list
+I1209 10:54:53.066127   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:53.074631   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.074806   79887 http.go:66] SENT    :{"command":"rpush languages ruby python c cpp golang java"}
+I1209 10:54:53.100930   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.101078   79887 http.go:66] SENT    :{"command":"lrange languages 0 1"}
+I1209 10:54:53.114030   79887 http.go:78] RECEIVED:{"response":"OK"}
 FAILED
 ----------------------
-TEST: LRANGE non-existing list
-I1208 14:45:23.711457    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.719126    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.719345    1653 http.go:66] SENT    :{"command":"LRANGE notfound 0 1"}
-I1208 14:45:23.728387    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: lrange non-existing list
+I1209 10:54:53.114303   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:53.185075   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.185231   79887 http.go:66] SENT    :{"command":"lrange notfound 0 1"}
+I1209 10:54:53.195416   79887 http.go:78] RECEIVED:{"response":"OK"}
 FAILED
 ----------------------
-TEST: LRANGE with invalid range
-I1208 14:45:23.728772    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.734914    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.735134    1653 http.go:66] SENT    :{"command":"RPUSH languages ruby"}
-I1208 14:45:23.741568    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.741815    1653 http.go:66] SENT    :{"command":"LRANGE languages 2 4"}
-I1208 14:45:23.748127    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: lrange with invalid range
+I1209 10:54:53.195613   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:53.204955   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.205104   79887 http.go:66] SENT    :{"command":"rpush languages ruby"}
+I1209 10:54:53.217390   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.217570   79887 http.go:66] SENT    :{"command":"lrange languages 2 4"}
+I1209 10:54:53.226516   79887 http.go:78] RECEIVED:{"response":"OK"}
 FAILED
 ----------------------
-TEST: LLEN a list
-I1208 14:45:23.748457    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.754902    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: llen a list
+I1209 10:54:53.226718   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:53.235837   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.236001   79887 http.go:66] SENT    :{"command":"rpush programmers loc khiem minh khanh"}
+I1209 10:54:53.267726   79887 http.go:78] RECEIVED:{"response":"OK"}
 FAILED
 ----------------------
-TEST: LLEN non-existing key
-I1208 14:45:23.755276    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.762895    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.763136    1653 http.go:66] SENT    :{"command":"LLEN notfound"}
-I1208 14:45:23.769376    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: llen non-existing key
+I1209 10:54:53.267930   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:53.281748   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.281899   79887 http.go:66] SENT    :{"command":"llen notfound"}
+I1209 10:54:53.294270   79887 http.go:78] RECEIVED:{"response":"OK"}
 FAILED
 
 PASSED: 0/11
 #################################
 SUITE: sets
 ----------------------
-TEST: SADD creates a set
-I1208 14:45:23.769785    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.810313    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.810599    1653 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
-I1208 14:45:23.816634    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: sadd creates a set
+I1209 10:54:53.294548   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:53.302805   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.302979   79887 http.go:66] SENT    :{"command":"sadd asean vietnam lao campuchea"}
+I1209 10:54:53.311570   79887 http.go:78] RECEIVED:{"response":"OK"}
+PASSED
+----------------------
+TEST: sadd wrong key type
+I1209 10:54:53.311781   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:53.320232   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.320389   79887 http.go:66] SENT    :{"command":"set asean asean"}
+I1209 10:54:53.331408   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.331575   79887 http.go:66] SENT    :{"command":"sadd asean vietnam lao campuchea"}
+I1209 10:54:53.340653   79887 http.go:78] RECEIVED:{"response":"OK"}
 FAILED
 ----------------------
-TEST: SADD wrong key type
-I1208 14:45:23.816970    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.824537    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.824783    1653 http.go:66] SENT    :{"command":"SET asean asean"}
-I1208 14:45:23.832455    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.832707    1653 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
-I1208 14:45:23.838989    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: srem removes members from a set
+I1209 10:54:53.340862   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:53.352429   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.352592   79887 http.go:66] SENT    :{"command":"sadd myset a b c d e"}
+I1209 10:54:53.361585   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.361750   79887 http.go:66] SENT    :{"command":"srem myset a b"}
+I1209 10:54:53.370297   79887 http.go:78] RECEIVED:{"response":"OK"}
+PASSED
+----------------------
+TEST: scard queries a set size
+I1209 10:54:53.370508   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:53.378999   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.379147   79887 http.go:66] SENT    :{"command":"sadd myset a b c d"}
+I1209 10:54:53.388354   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.388510   79887 http.go:66] SENT    :{"command":"scard myset"}
+I1209 10:54:53.397550   79887 http.go:78] RECEIVED:{"response":"OK"}
 FAILED
 ----------------------
-TEST: SREM removes members from a set
-I1208 14:45:23.839314    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.847095    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.847465    1653 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
-I1208 14:45:23.853604    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.853868    1653 http.go:66] SENT    :{"command":"SREM myset a b"}
-I1208 14:45:23.860156    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-FAILED
-----------------------
-TEST: SCARD queries a set size
-I1208 14:45:23.860506    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.866858    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.867144    1653 http.go:66] SENT    :{"command":"SADD myset a b c d"}
-I1208 14:45:23.873569    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.873782    1653 http.go:66] SENT    :{"command":"SCARD myset"}
-I1208 14:45:23.881187    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-FAILED
-----------------------
-TEST: SCARD wrong key type
-I1208 14:45:23.881638    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.894365    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.894645    1653 http.go:66] SENT    :{"command":"RPUSH mylist a b c d"}
-I1208 14:45:23.909531    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.909808    1653 http.go:66] SENT    :{"command":"SCARD mylist"}
-I1208 14:45:23.916817    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: scard wrong key type
+I1209 10:54:53.397765   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:53.406293   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.406445   79887 http.go:66] SENT    :{"command":"rpush mylist a b c d"}
+I1209 10:54:53.414893   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.415037   79887 http.go:66] SENT    :{"command":"scard mylist"}
+I1209 10:54:53.423482   79887 http.go:78] RECEIVED:{"response":"OK"}
 FAILED
 ----------------------
 TEST: SInter intersects sets
-I1208 14:45:23.917179    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.925849    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.926142    1653 http.go:66] SENT    :{"command":"SADD myseta a b c d e"}
-I1208 14:45:23.934856    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.935155    1653 http.go:66] SENT    :{"command":"SADD mysetb a b c"}
-I1208 14:45:23.942022    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.942301    1653 http.go:66] SENT    :{"command":"SADD mysetc a"}
-I1208 14:45:23.954251    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.954664    1653 http.go:66] SENT    :{"command":"SINTER myseta mysetb mysetc"}
-I1208 14:45:23.961914    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+I1209 10:54:53.423702   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:53.432169   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.432336   79887 http.go:66] SENT    :{"command":"sadd myseta a b c d e"}
+I1209 10:54:53.441769   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.441925   79887 http.go:66] SENT    :{"command":"sadd mysetb a b c"}
+I1209 10:54:53.450687   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.450832   79887 http.go:66] SENT    :{"command":"sadd mysetc a"}
+I1209 10:54:53.468898   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.469061   79887 http.go:66] SENT    :{"command":"sinter myseta mysetb mysetc"}
+I1209 10:54:53.479096   79887 http.go:78] RECEIVED:{"response":"OK"}
 FAILED
 ----------------------
-TEST: SMEMBERS queries a set's members
-I1208 14:45:23.962451    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.968702    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.968950    1653 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
-I1208 14:45:23.974998    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.975242    1653 http.go:66] SENT    :{"command":"SMEMBERS myset"}
-I1208 14:45:23.983494    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: smembers queries a set's members
+I1209 10:54:53.479310   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:53.490970   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.491213   79887 http.go:66] SENT    :{"command":"sadd myset a b c d e"}
+I1209 10:54:53.500761   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.500921   79887 http.go:66] SENT    :{"command":"smembers myset"}
+I1209 10:54:53.516783   79887 http.go:78] RECEIVED:{"response":"OK"}
 FAILED
 ----------------------
-TEST: SREM and then SMEMBERS to query result
-I1208 14:45:23.983944    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:23.996935    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:23.997220    1653 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
-I1208 14:45:24.003627    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:24.003999    1653 http.go:66] SENT    :{"command":"SREM myset a b"}
-I1208 14:45:24.012445    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:24.012693    1653 http.go:66] SENT    :{"command":"SMEMBERS myset"}
-I1208 14:45:24.019092    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+TEST: srem and then smembers to query result
+I1209 10:54:53.516974   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:53.526862   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.527053   79887 http.go:66] SENT    :{"command":"sadd myset a b c d e"}
+I1209 10:54:53.535907   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.536064   79887 http.go:66] SENT    :{"command":"srem myset a b"}
+I1209 10:54:53.546591   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.546746   79887 http.go:66] SENT    :{"command":"smembers myset"}
+I1209 10:54:53.562910   79887 http.go:78] RECEIVED:{"response":"OK"}
 FAILED
 
-PASSED: 0/8
+PASSED: 2/8
 #################################
 SUITE: save
 ----------------------
 TEST: Save and restore
-I1208 14:45:24.019503    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:24.025727    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:24.025989    1653 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 14:45:24.032263    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:24.032507    1653 http.go:66] SENT    :{"command":"RPUSH colors green blue red white"}
-I1208 14:45:24.038856    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:24.039110    1653 http.go:66] SENT    :{"command":"SADD countries vietnam singapore vietnam"}
-I1208 14:45:24.045550    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:24.045804    1653 http.go:66] SENT    :{"command":"SAVE"}
-I1208 14:45:24.052062    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:24.052304    1653 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 14:45:24.058629    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:24.058895    1653 http.go:66] SENT    :{"command":"RESTORE"}
-I1208 14:45:24.065492    1653 http.go:77] RECEIVED:{"response":"ECOM"}
-I1208 14:45:24.065776    1653 http.go:66] SENT    :{"command":"GET name"}
-I1208 14:45:24.071852    1653 http.go:77] RECEIVED:{"response":"ECOM"}
+I1209 10:54:53.563156   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:53.573320   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.573477   79887 http.go:66] SENT    :{"command":"set name grokking"}
+I1209 10:54:53.587597   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.587747   79887 http.go:66] SENT    :{"command":"rpush colors green blue red white"}
+I1209 10:54:53.596323   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.596484   79887 http.go:66] SENT    :{"command":"sadd countries vietnam singapore vietnam"}
+I1209 10:54:53.604472   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.604631   79887 http.go:66] SENT    :{"command":"save"}
+I1209 10:54:53.613094   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.613297   79887 http.go:66] SENT    :{"command":"flushdb"}
+I1209 10:54:53.629269   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.629419   79887 http.go:66] SENT    :{"command":"restore"}
+I1209 10:54:53.640562   79887 http.go:78] RECEIVED:{"response":"OK"}
+I1209 10:54:53.640701   79887 http.go:66] SENT    :{"command":"get name"}
+I1209 10:54:53.649550   79887 http.go:78] RECEIVED:{"response":"EKTYP"}
 FAILED
 
 PASSED: 0/1

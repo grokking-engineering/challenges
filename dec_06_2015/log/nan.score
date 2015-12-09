@@ -2,241 +2,280 @@
 SUITE: general
 ----------------------
 TEST: FLUSHDB clear all key
-I1208 13:26:32.075300   29216 http.go:66] SENT    :{"command":"SET s a"}
-I1208 13:26:32.089433   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.089703   29216 http.go:66] SENT    :{"command":"RPUSH k b"}
-I1208 13:26:32.098850   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.099094   29216 http.go:66] SENT    :{"command":"SADD z c"}
-I1208 13:26:32.105062   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.105266   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.110284   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:19:58.485055   89267 http.go:66] SENT    :{"command":"SET s a"}
+I1209 11:19:58.506226   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:19:58.506454   89267 http.go:66] SENT    :{"command":"RPUSH k b"}
+I1209 11:19:58.515007   89267 http.go:78] RECEIVED:{"response":1}
+I1209 11:19:58.515169   89267 http.go:66] SENT    :{"command":"SADD z c"}
+I1209 11:19:58.523416   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:19:58.523499   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:19:58.533841   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:19:58.533943   89267 http.go:66] SENT    :{"command":"GET s"}
+I1209 11:19:58.542646   89267 http.go:78] RECEIVED:{"response":"EKTYP"}
+I1209 11:19:58.542901   89267 http.go:66] SENT    :{"command":"GET k"}
+I1209 11:19:58.552344   89267 http.go:78] RECEIVED:{"response":"EKTYP"}
+I1209 11:19:58.552474   89267 http.go:66] SENT    :{"command":"GET z"}
+I1209 11:19:58.560085   89267 http.go:78] RECEIVED:{"response":"EKTYP"}
+PASSED
 ----------------------
 TEST: EXPIRE key after 30 seconds
-I1208 13:26:32.110472   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.115852   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.116067   29216 http.go:66] SENT    :{"command":"SET whoareyou me"}
-I1208 13:26:32.122113   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.122315   29216 http.go:66] SENT    :{"command":"EXPIRE whoareyou 30"}
-I1208 13:26:32.127658   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.127880   29216 http.go:66] SENT    :{"command":"GET whoareyou"}
-I1208 13:26:32.132649   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:19:58.560406   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:19:58.567952   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:19:58.568092   89267 http.go:66] SENT    :{"command":"SET whoareyou me"}
+I1209 11:19:58.575956   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:19:58.576106   89267 http.go:66] SENT    :{"command":"EXPIRE whoareyou 30"}
+I1209 11:19:58.585333   89267 http.go:78] RECEIVED:{"response":1}
+I1209 11:19:58.585489   89267 http.go:66] SENT    :{"command":"GET whoareyou"}
+I1209 11:19:58.593462   89267 http.go:78] RECEIVED:{"response":"me"}
+I1209 11:20:03.595917   89267 http.go:66] SENT    :{"command":"GET whoareyou"}
+I1209 11:20:03.605605   89267 http.go:78] RECEIVED:{"response":"me"}
+I1209 11:20:38.610712   89267 http.go:66] SENT    :{"command":"GET whoareyou"}
+I1209 11:20:38.620356   89267 http.go:78] RECEIVED:{"response":"EKTYP"}
+PASSED
 ----------------------
 TEST: Delete a key
-I1208 13:26:32.132938   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.138493   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.138692   29216 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 13:26:32.144480   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.144684   29216 http.go:66] SENT    :{"command":"GET name"}
-I1208 13:26:32.149709   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:38.620531   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:38.629488   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:38.629668   89267 http.go:66] SENT    :{"command":"SET name grokking"}
+I1209 11:20:38.637739   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:38.637899   89267 http.go:66] SENT    :{"command":"GET name"}
+I1209 11:20:38.645603   89267 http.go:78] RECEIVED:{"response":"grokking"}
+I1209 11:20:38.645787   89267 http.go:66] SENT    :{"command":"DEL name"}
+I1209 11:20:38.655414   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:38.655562   89267 http.go:66] SENT    :{"command":"GET name"}
+I1209 11:20:38.663210   89267 http.go:78] RECEIVED:{"response":"EKTYP"}
+PASSED
 
-PASSED: 0/3
+PASSED: 3/3
 #################################
 SUITE: strings
 ----------------------
 TEST: basic SET
-I1208 13:26:32.150080   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.156426   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.156692   29216 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 13:26:32.161653   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:38.663434   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:38.673431   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:38.673581   89267 http.go:66] SENT    :{"command":"SET name grokking"}
+I1209 11:20:38.708119   89267 http.go:78] RECEIVED:{"response":"OK"}
+PASSED
 ----------------------
 TEST: basic GET
-I1208 13:26:32.161945   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.168304   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.168532   29216 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 13:26:32.173804   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.174141   29216 http.go:66] SENT    :{"command":"SET name engineering"}
-I1208 13:26:32.180416   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.180723   29216 http.go:66] SENT    :{"command":"GET name"}
-I1208 13:26:32.186997   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:38.708304   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:38.730676   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:38.730819   89267 http.go:66] SENT    :{"command":"SET name grokking"}
+I1209 11:20:38.949287   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:38.949460   89267 http.go:66] SENT    :{"command":"SET name engineering"}
+I1209 11:20:38.956822   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:38.957025   89267 http.go:66] SENT    :{"command":"GET name"}
+I1209 11:20:38.964871   89267 http.go:78] RECEIVED:{"response":"engineering"}
+PASSED
 ----------------------
 TEST: GET non-existing key
-I1208 13:26:32.187403   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.193437   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:38.965041   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:38.972211   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:38.972330   89267 http.go:66] SENT    :{"command":"GET notfound"}
+I1209 11:20:38.986028   89267 http.go:78] RECEIVED:{"response":"EKTYP"}
+PASSED
 
-PASSED: 0/3
+PASSED: 3/3
 #################################
 SUITE: lists
 ----------------------
 TEST: RPUSH to a list
-I1208 13:26:32.193868   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.198723   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:38.986238   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:38.993120   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:38.993267   89267 http.go:66] SENT    :{"command":"RPUSH programmers huy"}
+I1209 11:20:39.000799   89267 http.go:78] RECEIVED:{"response":1}
+I1209 11:20:39.000949   89267 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
+I1209 11:20:39.019833   89267 http.go:78] RECEIVED:{"response":5}
+PASSED
 ----------------------
 TEST: RPUSH to a non-list key
-I1208 13:26:32.199023   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.203906   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:39.020027   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.028687   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.028840   89267 http.go:66] SENT    :{"command":"SET programmers me"}
+I1209 11:20:39.037083   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.037233   89267 http.go:66] SENT    :{"command":"RPUSH programmers huy"}
+I1209 11:20:39.043938   89267 http.go:78] RECEIVED:{"response":"EKTYP"}
+PASSED
 ----------------------
 TEST: LPOP a list
-I1208 13:26:32.204195   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.209125   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.209372   29216 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
-I1208 13:26:32.214401   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.214591   29216 http.go:66] SENT    :{"command":"LPOP programmers"}
-I1208 13:26:32.224954   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:39.044127   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.051799   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.051959   89267 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
+I1209 11:20:39.059565   89267 http.go:78] RECEIVED:{"response":4}
+I1209 11:20:39.059723   89267 http.go:66] SENT    :{"command":"LPOP programmers"}
+I1209 11:20:39.067355   89267 http.go:78] RECEIVED:{"response":"loc"}
+I1209 11:20:39.067527   89267 http.go:66] SENT    :{"command":"LRANGE programmers 0 2"}
+I1209 11:20:39.103861   89267 http.go:78] RECEIVED:{"response":["khiem","minh","khanh"]}
+PASSED
 ----------------------
 TEST: LPOP non-existing key
-I1208 13:26:32.225374   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.230491   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.230725   29216 http.go:66] SENT    :{"command":"LPOP notfound"}
-I1208 13:26:32.235700   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:39.104122   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.115417   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.115570   89267 http.go:66] SENT    :{"command":"LPOP notfound"}
+I1209 11:20:39.122825   89267 http.go:78] RECEIVED:{"response":"EKTYP"}
+PASSED
 ----------------------
 TEST: RPOP a list
-I1208 13:26:32.236016   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.240875   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:39.122987   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.130830   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.130984   89267 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
+I1209 11:20:39.139436   89267 http.go:78] RECEIVED:{"response":4}
+I1209 11:20:39.139585   89267 http.go:66] SENT    :{"command":"RPOP programmers"}
+I1209 11:20:39.147504   89267 http.go:78] RECEIVED:{"response":"khanh"}
+I1209 11:20:39.147675   89267 http.go:66] SENT    :{"command":"LRANGE programmers 0 2"}
+I1209 11:20:39.154865   89267 http.go:78] RECEIVED:{"response":["loc","khiem","minh"]}
+PASSED
 ----------------------
 TEST: RPOP non-existing key
-I1208 13:26:32.241127   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.246137   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:39.155134   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.162373   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.162540   89267 http.go:66] SENT    :{"command":"RPOP notfound"}
+I1209 11:20:39.170724   89267 http.go:78] RECEIVED:{"response":"EKTYP"}
+PASSED
 ----------------------
 TEST: LRANGE a list
-I1208 13:26:32.246409   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.251413   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.251653   29216 http.go:66] SENT    :{"command":"RPUSH languages ruby python c cpp golang java"}
-I1208 13:26:32.256751   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.256955   29216 http.go:66] SENT    :{"command":"LRANGE languages 0 1"}
-I1208 13:26:32.261883   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:39.170908   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.180376   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.180521   89267 http.go:66] SENT    :{"command":"RPUSH languages ruby python c cpp golang java"}
+I1209 11:20:39.201517   89267 http.go:78] RECEIVED:{"response":6}
+I1209 11:20:39.201680   89267 http.go:66] SENT    :{"command":"LRANGE languages 0 1"}
+I1209 11:20:39.208863   89267 http.go:78] RECEIVED:{"response":["ruby","python"]}
+I1209 11:20:39.209042   89267 http.go:66] SENT    :{"command":"LRANGE languages 2 4"}
+I1209 11:20:39.216311   89267 http.go:78] RECEIVED:{"response":["c","cpp","golang"]}
+PASSED
 ----------------------
 TEST: LRANGE non-existing list
-I1208 13:26:32.262132   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.267281   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.267487   29216 http.go:66] SENT    :{"command":"LRANGE notfound 0 1"}
-I1208 13:26:32.274499   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:39.216546   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.223603   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.223793   89267 http.go:66] SENT    :{"command":"LRANGE notfound 0 1"}
+I1209 11:20:39.231433   89267 http.go:78] RECEIVED:{"response":"EKTYP"}
+PASSED
 ----------------------
 TEST: LRANGE with invalid range
-I1208 13:26:32.274846   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.280540   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.280785   29216 http.go:66] SENT    :{"command":"RPUSH languages ruby"}
-I1208 13:26:32.285668   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.285891   29216 http.go:66] SENT    :{"command":"LRANGE languages 2 4"}
-I1208 13:26:32.290937   29216 http.go:77] RECEIVED:404 page not found
+I1209 11:20:39.231594   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.239592   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.239762   89267 http.go:66] SENT    :{"command":"RPUSH languages ruby"}
+I1209 11:20:39.247585   89267 http.go:78] RECEIVED:{"response":1}
+I1209 11:20:39.247762   89267 http.go:66] SENT    :{"command":"LRANGE languages 2 4"}
+I1209 11:20:39.254955   89267 http.go:78] RECEIVED:{"response":["ruby"]}
 FAILED
 ----------------------
 TEST: LLEN a list
-I1208 13:26:32.291260   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.296507   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:39.255164   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.261911   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.262095   89267 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
+I1209 11:20:39.277563   89267 http.go:78] RECEIVED:{"response":4}
+I1209 11:20:39.277707   89267 http.go:66] SENT    :{"command":"LLEN programmers"}
+I1209 11:20:39.286659   89267 http.go:78] RECEIVED:{"response":4}
+PASSED
 ----------------------
 TEST: LLEN non-existing key
-I1208 13:26:32.296876   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.301795   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.302021   29216 http.go:66] SENT    :{"command":"LLEN notfound"}
-I1208 13:26:32.308502   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:39.286853   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.299641   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.299794   89267 http.go:66] SENT    :{"command":"LLEN notfound"}
+I1209 11:20:39.306849   89267 http.go:78] RECEIVED:{"response":"EKTYP"}
+PASSED
 
-PASSED: 0/11
+PASSED: 10/11
 #################################
 SUITE: sets
 ----------------------
 TEST: SADD creates a set
-I1208 13:26:32.308900   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.313588   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.313792   29216 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
-I1208 13:26:32.318820   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:39.307073   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.313800   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.313948   89267 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
+I1209 11:20:39.322834   89267 http.go:78] RECEIVED:{"response":"OK"}
+PASSED
 ----------------------
 TEST: SADD wrong key type
-I1208 13:26:32.319109   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.324222   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.324420   29216 http.go:66] SENT    :{"command":"SET asean asean"}
-I1208 13:26:32.329438   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.329711   29216 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
-I1208 13:26:32.334672   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:39.323024   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.330884   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.331025   89267 http.go:66] SENT    :{"command":"SET asean asean"}
+I1209 11:20:39.337872   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.338036   89267 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
+I1209 11:20:39.345909   89267 http.go:78] RECEIVED:{"response":"EKTYP"}
+PASSED
 ----------------------
 TEST: SREM removes members from a set
-I1208 13:26:32.334970   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.339887   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.340084   29216 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
-I1208 13:26:32.345142   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.345393   29216 http.go:66] SENT    :{"command":"SREM myset a b"}
-I1208 13:26:32.350715   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:39.346091   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.354236   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.354398   89267 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1209 11:20:39.361584   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.361740   89267 http.go:66] SENT    :{"command":"SREM myset a b"}
+I1209 11:20:39.368809   89267 http.go:78] RECEIVED:{"response":"OK"}
+PASSED
 ----------------------
 TEST: SCARD queries a set size
-I1208 13:26:32.351091   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.355964   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.356194   29216 http.go:66] SENT    :{"command":"SADD myset a b c d"}
-I1208 13:26:32.361228   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.361490   29216 http.go:66] SENT    :{"command":"SCARD myset"}
-I1208 13:26:32.367605   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:39.369006   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.376357   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.376518   89267 http.go:66] SENT    :{"command":"SADD myset a b c d"}
+I1209 11:20:39.384074   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.384221   89267 http.go:66] SENT    :{"command":"SCARD myset"}
+I1209 11:20:39.391495   89267 http.go:78] RECEIVED:{"response":4}
+PASSED
 ----------------------
 TEST: SCARD wrong key type
-I1208 13:26:32.367898   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.373721   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.373925   29216 http.go:66] SENT    :{"command":"RPUSH mylist a b c d"}
-I1208 13:26:32.379424   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.379617   29216 http.go:66] SENT    :{"command":"SCARD mylist"}
-I1208 13:26:32.384684   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:39.391684   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.399236   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.399410   89267 http.go:66] SENT    :{"command":"RPUSH mylist a b c d"}
+I1209 11:20:39.406355   89267 http.go:78] RECEIVED:{"response":4}
+I1209 11:20:39.406500   89267 http.go:66] SENT    :{"command":"SCARD mylist"}
+I1209 11:20:39.415113   89267 http.go:78] RECEIVED:{"response":"EKTYP"}
+PASSED
 ----------------------
 TEST: SInter intersects sets
-I1208 13:26:32.384953   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.389972   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.390168   29216 http.go:66] SENT    :{"command":"SADD myseta a b c d e"}
-I1208 13:26:32.395267   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.395470   29216 http.go:66] SENT    :{"command":"SADD mysetb a b c"}
-I1208 13:26:32.400482   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.400684   29216 http.go:66] SENT    :{"command":"SADD mysetc a"}
-I1208 13:26:32.405790   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.405986   29216 http.go:66] SENT    :{"command":"SINTER myseta mysetb mysetc"}
-I1208 13:26:32.411055   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:39.415303   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.429181   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.429323   89267 http.go:66] SENT    :{"command":"SADD myseta a b c d e"}
+I1209 11:20:39.436890   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.437085   89267 http.go:66] SENT    :{"command":"SADD mysetb a b c"}
+I1209 11:20:39.447477   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.447636   89267 http.go:66] SENT    :{"command":"SADD mysetc a"}
+I1209 11:20:39.454501   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.454657   89267 http.go:66] SENT    :{"command":"SINTER myseta mysetb mysetc"}
+I1209 11:20:39.463033   89267 http.go:78] RECEIVED:{"response":["a"]}
+PASSED
 ----------------------
 TEST: SMEMBERS queries a set's members
-I1208 13:26:32.411414   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.417666   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.417868   29216 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
-I1208 13:26:32.423113   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.423419   29216 http.go:66] SENT    :{"command":"SMEMBERS myset"}
-I1208 13:26:32.429856   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:39.463253   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.470277   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.470440   89267 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1209 11:20:39.477547   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.477706   89267 http.go:66] SENT    :{"command":"SMEMBERS myset"}
+I1209 11:20:39.485812   89267 http.go:78] RECEIVED:{"response":["b","c","d","e","a"]}
+PASSED
 ----------------------
 TEST: SREM and then SMEMBERS to query result
-I1208 13:26:32.430316   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.436088   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.436287   29216 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
-I1208 13:26:32.441506   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.441699   29216 http.go:66] SENT    :{"command":"SREM myset a b"}
-I1208 13:26:32.447133   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.447357   29216 http.go:66] SENT    :{"command":"SMEMBERS myset"}
-I1208 13:26:32.452017   29216 http.go:77] RECEIVED:404 page not found
-FAILED
+I1209 11:20:39.486081   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.500010   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.500173   89267 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1209 11:20:39.515199   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.515352   89267 http.go:66] SENT    :{"command":"SREM myset a b"}
+I1209 11:20:39.526729   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.526840   89267 http.go:66] SENT    :{"command":"SMEMBERS myset"}
+I1209 11:20:39.535668   89267 http.go:78] RECEIVED:{"response":["c","d","e"]}
+PASSED
 
-PASSED: 0/8
+PASSED: 8/8
 #################################
 SUITE: save
 ----------------------
 TEST: Save and restore
-I1208 13:26:32.452382   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.457333   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.457547   29216 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 13:26:32.462548   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.462758   29216 http.go:66] SENT    :{"command":"RPUSH colors green blue red white"}
-I1208 13:26:32.469170   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.469513   29216 http.go:66] SENT    :{"command":"SADD countries vietnam singapore vietnam"}
-I1208 13:26:32.474481   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.474696   29216 http.go:66] SENT    :{"command":"SAVE"}
-I1208 13:26:32.479709   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.479917   29216 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:26:32.484959   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.485158   29216 http.go:66] SENT    :{"command":"RESTORE"}
-I1208 13:26:32.490284   29216 http.go:77] RECEIVED:404 page not found
-I1208 13:26:32.490498   29216 http.go:66] SENT    :{"command":"GET name"}
-I1208 13:26:32.496865   29216 http.go:77] RECEIVED:404 page not found
+I1209 11:20:39.535972   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.544651   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.544884   89267 http.go:66] SENT    :{"command":"SET name grokking"}
+I1209 11:20:39.552219   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.552362   89267 http.go:66] SENT    :{"command":"RPUSH colors green blue red white"}
+I1209 11:20:39.561644   89267 http.go:78] RECEIVED:{"response":4}
+I1209 11:20:39.561754   89267 http.go:66] SENT    :{"command":"SADD countries vietnam singapore vietnam"}
+I1209 11:20:39.568609   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.568780   89267 http.go:66] SENT    :{"command":"SAVE"}
+I1209 11:20:39.576776   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.576933   89267 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:20:39.583457   89267 http.go:78] RECEIVED:{"response":"OK"}
+I1209 11:20:39.583605   89267 http.go:66] SENT    :{"command":"RESTORE"}
+I1209 11:20:39.593214   89267 http.go:66] SENT    :{"command":"GET name"}
+I1209 11:20:39.617653   89267 http.go:78] RECEIVED:{"response":"EKTYP"}
 FAILED
 
 PASSED: 0/1

@@ -2,32 +2,32 @@
 SUITE: general
 ----------------------
 TEST: FLUSHDB clear all key
-I1208 13:28:53.282158   29375 http.go:66] SENT    :{"command":"SET s a"}
-I1208 13:28:53.293219   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.421622   84735 http.go:66] SENT    :{"command":"SET s a"}
+I1209 11:07:29.441368   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.293680   29375 http.go:66] SENT    :{"command":"RPUSH k b"}
-I1208 13:28:53.300525   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.441502   84735 http.go:66] SENT    :{"command":"RPUSH k b"}
+I1209 11:07:29.448389   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.300776   29375 http.go:66] SENT    :{"command":"SADD z c"}
-I1208 13:28:53.306907   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.448455   84735 http.go:66] SENT    :{"command":"SADD z c"}
+I1209 11:07:29.455637   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.307194   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.313139   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.455700   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:29.464442   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -37,32 +37,32 @@ I1208 13:28:53.313139   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: EXPIRE key after 30 seconds
-I1208 13:28:53.313557   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.318298   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.464544   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:29.485324   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.318524   29375 http.go:66] SENT    :{"command":"SET whoareyou me"}
-I1208 13:28:53.323344   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.485496   84735 http.go:66] SENT    :{"command":"SET whoareyou me"}
+I1209 11:07:29.501185   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.323522   29375 http.go:66] SENT    :{"command":"EXPIRE whoareyou 30"}
-I1208 13:28:53.328592   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.501318   84735 http.go:66] SENT    :{"command":"EXPIRE whoareyou 30"}
+I1209 11:07:29.509087   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.328751   29375 http.go:66] SENT    :{"command":"GET whoareyou"}
-I1208 13:28:53.334290   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.509204   84735 http.go:66] SENT    :{"command":"GET whoareyou"}
+I1209 11:07:29.723823   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -72,24 +72,24 @@ I1208 13:28:53.334290   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: Delete a key
-I1208 13:28:53.334581   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.339869   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.723977   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:29.737410   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.340169   29375 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 13:28:53.346807   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.737512   84735 http.go:66] SENT    :{"command":"SET name grokking"}
+I1209 11:07:29.744923   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.347089   29375 http.go:66] SENT    :{"command":"GET name"}
-I1208 13:28:53.361582   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.745031   84735 http.go:66] SENT    :{"command":"GET name"}
+I1209 11:07:29.752679   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -103,16 +103,16 @@ PASSED: 0/3
 SUITE: strings
 ----------------------
 TEST: basic SET
-I1208 13:28:53.361709   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.366958   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.752939   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:29.761762   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.367042   29375 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 13:28:53.372988   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.761882   84735 http.go:66] SENT    :{"command":"SET name grokking"}
+I1209 11:07:29.778417   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -122,32 +122,32 @@ I1208 13:28:53.372988   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: basic GET
-I1208 13:28:53.373105   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.378703   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.778566   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:29.802540   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.378997   29375 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 13:28:53.384263   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.802651   84735 http.go:66] SENT    :{"command":"SET name grokking"}
+I1209 11:07:29.818414   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.384479   29375 http.go:66] SENT    :{"command":"SET name engineering"}
-I1208 13:28:53.390607   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.818516   84735 http.go:66] SENT    :{"command":"SET name engineering"}
+I1209 11:07:29.833606   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.390787   29375 http.go:66] SENT    :{"command":"GET name"}
-I1208 13:28:53.397149   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.833715   84735 http.go:66] SENT    :{"command":"GET name"}
+I1209 11:07:29.844170   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -157,8 +157,8 @@ I1208 13:28:53.397149   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: GET non-existing key
-I1208 13:28:53.397562   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.402911   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.844327   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:29.851733   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -172,8 +172,8 @@ PASSED: 0/3
 SUITE: lists
 ----------------------
 TEST: RPUSH to a list
-I1208 13:28:53.403281   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.408018   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:29.851913   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:30.067099   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -183,8 +183,8 @@ I1208 13:28:53.408018   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: RPUSH to a non-list key
-I1208 13:28:53.408352   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.413348   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.067245   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:30.074665   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -194,24 +194,24 @@ I1208 13:28:53.413348   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: LPOP a list
-I1208 13:28:53.413617   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.418591   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.074811   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:30.082029   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.418809   29375 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
-I1208 13:28:53.423905   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.082149   84735 http.go:66] SENT    :{"command":"RPUSH programmers loc khiem minh khanh"}
+I1209 11:07:30.091162   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.424102   29375 http.go:66] SENT    :{"command":"LPOP programmers"}
-I1208 13:28:53.432001   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.091273   84735 http.go:66] SENT    :{"command":"LPOP programmers"}
+I1209 11:07:30.099150   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -221,16 +221,16 @@ I1208 13:28:53.432001   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: LPOP non-existing key
-I1208 13:28:53.432331   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.438631   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.099299   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:30.107068   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.438853   29375 http.go:66] SENT    :{"command":"LPOP notfound"}
-I1208 13:28:53.443675   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.107177   84735 http.go:66] SENT    :{"command":"LPOP notfound"}
+I1209 11:07:30.114570   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -240,8 +240,8 @@ I1208 13:28:53.443675   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: RPOP a list
-I1208 13:28:53.443953   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.448973   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.114730   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:30.122059   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -251,8 +251,8 @@ I1208 13:28:53.448973   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: RPOP non-existing key
-I1208 13:28:53.449240   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.454536   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.122202   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:30.129639   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -262,24 +262,24 @@ I1208 13:28:53.454536   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: LRANGE a list
-I1208 13:28:53.454912   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.460273   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.129798   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:30.137187   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.460473   29375 http.go:66] SENT    :{"command":"RPUSH languages ruby python c cpp golang java"}
-I1208 13:28:53.466125   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.137296   84735 http.go:66] SENT    :{"command":"RPUSH languages ruby python c cpp golang java"}
+I1209 11:07:30.144424   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.466299   29375 http.go:66] SENT    :{"command":"LRANGE languages 0 1"}
-I1208 13:28:53.472088   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.144535   84735 http.go:66] SENT    :{"command":"LRANGE languages 0 1"}
+I1209 11:07:30.151751   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -289,16 +289,16 @@ I1208 13:28:53.472088   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: LRANGE non-existing list
-I1208 13:28:53.472411   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.477998   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.151896   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:30.159193   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.478211   29375 http.go:66] SENT    :{"command":"LRANGE notfound 0 1"}
-I1208 13:28:53.483225   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.159298   84735 http.go:66] SENT    :{"command":"LRANGE notfound 0 1"}
+I1209 11:07:30.172681   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -308,24 +308,24 @@ I1208 13:28:53.483225   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: LRANGE with invalid range
-I1208 13:28:53.483466   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.488627   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.172817   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:30.180061   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.488822   29375 http.go:66] SENT    :{"command":"RPUSH languages ruby"}
-I1208 13:28:53.493978   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.180190   84735 http.go:66] SENT    :{"command":"RPUSH languages ruby"}
+I1209 11:07:30.189081   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.494179   29375 http.go:66] SENT    :{"command":"LRANGE languages 2 4"}
-I1208 13:28:53.499913   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.189187   84735 http.go:66] SENT    :{"command":"LRANGE languages 2 4"}
+I1209 11:07:30.196468   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -335,8 +335,8 @@ I1208 13:28:53.499913   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: LLEN a list
-I1208 13:28:53.500282   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.505721   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.196623   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:30.410908   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -346,16 +346,16 @@ I1208 13:28:53.505721   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: LLEN non-existing key
-I1208 13:28:53.506027   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.510608   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.411102   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:30.419504   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.510816   29375 http.go:66] SENT    :{"command":"LLEN notfound"}
-I1208 13:28:53.515700   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.419616   84735 http.go:66] SENT    :{"command":"LLEN notfound"}
+I1209 11:07:30.427280   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -369,16 +369,16 @@ PASSED: 0/11
 SUITE: sets
 ----------------------
 TEST: SADD creates a set
-I1208 13:28:53.516049   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.521226   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.427471   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:30.436431   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.521523   29375 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
-I1208 13:28:53.526276   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.436532   84735 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
+I1209 11:07:30.444521   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -388,24 +388,24 @@ I1208 13:28:53.526276   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: SADD wrong key type
-I1208 13:28:53.526555   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.531562   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.444687   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:30.658623   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.531762   29375 http.go:66] SENT    :{"command":"SET asean asean"}
-I1208 13:28:53.536804   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.658738   84735 http.go:66] SENT    :{"command":"SET asean asean"}
+I1209 11:07:30.666691   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.536998   29375 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
-I1208 13:28:53.542055   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.666801   84735 http.go:66] SENT    :{"command":"SADD asean vietnam lao campuchea"}
+I1209 11:07:30.674688   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -415,24 +415,24 @@ I1208 13:28:53.542055   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: SREM removes members from a set
-I1208 13:28:53.542330   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.547375   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.674839   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:30.689203   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.547568   29375 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
-I1208 13:28:53.552876   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.689310   84735 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1209 11:07:30.697869   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.553232   29375 http.go:66] SENT    :{"command":"SREM myset a b"}
-I1208 13:28:53.560488   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.697976   84735 http.go:66] SENT    :{"command":"SREM myset a b"}
+I1209 11:07:30.707031   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -442,24 +442,24 @@ I1208 13:28:53.560488   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: SCARD queries a set size
-I1208 13:28:53.560827   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.567359   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.707186   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:30.714707   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.567586   29375 http.go:66] SENT    :{"command":"SADD myset a b c d"}
-I1208 13:28:53.578095   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.714832   84735 http.go:66] SENT    :{"command":"SADD myset a b c d"}
+I1209 11:07:30.722119   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.578303   29375 http.go:66] SENT    :{"command":"SCARD myset"}
-I1208 13:28:53.584327   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.722228   84735 http.go:66] SENT    :{"command":"SCARD myset"}
+I1209 11:07:30.729663   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -469,24 +469,24 @@ I1208 13:28:53.584327   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: SCARD wrong key type
-I1208 13:28:53.584624   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.591629   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.729809   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:30.738934   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.591872   29375 http.go:66] SENT    :{"command":"RPUSH mylist a b c d"}
-I1208 13:28:53.599149   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.739047   84735 http.go:66] SENT    :{"command":"RPUSH mylist a b c d"}
+I1209 11:07:30.746545   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.599358   29375 http.go:66] SENT    :{"command":"SCARD mylist"}
-I1208 13:28:53.604217   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.746661   84735 http.go:66] SENT    :{"command":"SCARD mylist"}
+I1209 11:07:30.754003   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -496,40 +496,40 @@ I1208 13:28:53.604217   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: SInter intersects sets
-I1208 13:28:53.604487   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.609580   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.754162   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:30.760908   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.609802   29375 http.go:66] SENT    :{"command":"SADD myseta a b c d e"}
-I1208 13:28:53.616119   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.761037   84735 http.go:66] SENT    :{"command":"SADD myseta a b c d e"}
+I1209 11:07:30.974600   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.616312   29375 http.go:66] SENT    :{"command":"SADD mysetb a b c"}
-I1208 13:28:53.624458   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.974704   84735 http.go:66] SENT    :{"command":"SADD mysetb a b c"}
+I1209 11:07:30.983605   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.624688   29375 http.go:66] SENT    :{"command":"SADD mysetc a"}
-I1208 13:28:53.632735   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.983727   84735 http.go:66] SENT    :{"command":"SADD mysetc a"}
+I1209 11:07:30.991665   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.632853   29375 http.go:66] SENT    :{"command":"SINTER myseta mysetb mysetc"}
-I1208 13:28:53.641973   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:30.991794   84735 http.go:66] SENT    :{"command":"SINTER myseta mysetb mysetc"}
+I1209 11:07:31.000580   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -539,24 +539,24 @@ I1208 13:28:53.641973   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: SMEMBERS queries a set's members
-I1208 13:28:53.642243   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.651797   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:31.000733   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:31.009801   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.651996   29375 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
-I1208 13:28:53.661468   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:31.009912   84735 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1209 11:07:31.026199   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.661660   29375 http.go:66] SENT    :{"command":"SMEMBERS myset"}
-I1208 13:28:53.668006   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:31.026318   84735 http.go:66] SENT    :{"command":"SMEMBERS myset"}
+I1209 11:07:31.034097   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -566,32 +566,32 @@ I1208 13:28:53.668006   29375 http.go:77] RECEIVED:<html>
 FAILED
 ----------------------
 TEST: SREM and then SMEMBERS to query result
-I1208 13:28:53.668278   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.673335   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:31.034247   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:31.041308   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.673555   29375 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
-I1208 13:28:53.678557   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:31.041486   84735 http.go:66] SENT    :{"command":"SADD myset a b c d e"}
+I1209 11:07:31.050055   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.678746   29375 http.go:66] SENT    :{"command":"SREM myset a b"}
-I1208 13:28:53.683846   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:31.050161   84735 http.go:66] SENT    :{"command":"SREM myset a b"}
+I1209 11:07:31.058529   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.684034   29375 http.go:66] SENT    :{"command":"SMEMBERS myset"}
-I1208 13:28:53.689268   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:31.058637   84735 http.go:66] SENT    :{"command":"SMEMBERS myset"}
+I1209 11:07:31.066468   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
@@ -605,64 +605,64 @@ PASSED: 0/8
 SUITE: save
 ----------------------
 TEST: Save and restore
-I1208 13:28:53.689716   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.694419   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:31.066679   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:31.075481   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.694611   29375 http.go:66] SENT    :{"command":"SET name grokking"}
-I1208 13:28:53.698990   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:31.075591   84735 http.go:66] SENT    :{"command":"SET name grokking"}
+I1209 11:07:31.083991   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.699202   29375 http.go:66] SENT    :{"command":"RPUSH colors green blue red white"}
-I1208 13:28:53.704439   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:31.084101   84735 http.go:66] SENT    :{"command":"RPUSH colors green blue red white"}
+I1209 11:07:31.092037   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.704972   29375 http.go:66] SENT    :{"command":"SADD countries vietnam singapore vietnam"}
-I1208 13:28:53.713555   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:31.092157   84735 http.go:66] SENT    :{"command":"SADD countries vietnam singapore vietnam"}
+I1209 11:07:31.100358   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.713747   29375 http.go:66] SENT    :{"command":"SAVE"}
-I1208 13:28:53.722713   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:31.100469   84735 http.go:66] SENT    :{"command":"SAVE"}
+I1209 11:07:31.108855   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.722916   29375 http.go:66] SENT    :{"command":"FLUSHDB"}
-I1208 13:28:53.731946   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:31.108968   84735 http.go:66] SENT    :{"command":"FLUSHDB"}
+I1209 11:07:31.118148   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.732137   29375 http.go:66] SENT    :{"command":"RESTORE"}
-I1208 13:28:53.742527   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:31.118256   84735 http.go:66] SENT    :{"command":"RESTORE"}
+I1209 11:07:31.125720   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>
 <hr><center>nginx/1.4.6 (Ubuntu)</center>
 </body>
 </html>
-I1208 13:28:53.742721   29375 http.go:66] SENT    :{"command":"GET name"}
-I1208 13:28:53.754317   29375 http.go:77] RECEIVED:<html>
+I1209 11:07:31.125848   84735 http.go:66] SENT    :{"command":"GET name"}
+I1209 11:07:31.134053   84735 http.go:78] RECEIVED:<html>
 <head><title>502 Bad Gateway</title></head>
 <body bgcolor="white">
 <center><h1>502 Bad Gateway</h1></center>

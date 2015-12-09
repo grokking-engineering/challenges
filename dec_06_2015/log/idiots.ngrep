@@ -1,1444 +1,1856 @@
 interface: any
-filter: (ip or ip6) and ( host 128.199.179.49 )
-####
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+filter: (ip or ip6) and ( port 80 )
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SET s a"}
-##
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:07:53 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-##
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 23.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"RPUSH k b"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-DiFmUvZ58pv8NHtOrmrv6g".
+Date: Wed, 09 Dec 2015 03:07:53 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":1}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 22.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SADD z c"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-DiFmUvZ58pv8NHtOrmrv6g".
+Date: Wed, 09 Dec 2015 03:07:53 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":1}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:07:53 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
+Content-Length: 19.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"GET s"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-oLIwHuz6Cab8Kew/Wm/uAg".
+Date: Wed, 09 Dec 2015 03:07:53 GMT.
+Connection: keep-alive.
+.
+{"response":null}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:07:53 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 30.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SET whoareyou me"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:07:53 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 33.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"EXPIRE whoareyou 30"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 19.
+ETag: W/"13-puLqAn05D13qdeFY3x5BBQ".
+Date: Wed, 09 Dec 2015 03:07:53 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"ECOM"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 27.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"GET whoareyou"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-Xt4ooNUWiZ0rgkzisgfbLQ".
+Date: Wed, 09 Dec 2015 03:07:53 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"me"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
+Content-Length: 27.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"GET whoareyou"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-Xt4ooNUWiZ0rgkzisgfbLQ".
+Date: Wed, 09 Dec 2015 03:07:58 GMT.
+Connection: keep-alive.
+.
+{"response":"me"}
+
+T 198.252.206.25:80 -> 192.168.2.109:57218 [AP]
+..{"action":"hb","data":"hb"}
+
+T 192.168.2.109:57218 -> 198.252.206.25:80 [AP]
+....y...
+
+T 192.168.2.109:57218 -> 198.252.206.25:80 [AP]
+........
+
+T 192.168.2.109:57218 -> 198.252.206.25:80 [AP]
+..E...-.
+
+T 192.168.2.109:57218 -> 198.252.206.25:80 [AP]
+..W!.H?C
+
+T 192.168.2.109:57218 -> 198.252.206.25:80 [AP]
+........
+
+T 192.168.2.109:57218 -> 198.252.206.25:80 [AP]
+........
+
+T 192.168.2.109:57218 -> 198.252.206.25:80 [AP]
+..}1Iu.S
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
+Content-Length: 27.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"GET whoareyou"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-Xt4ooNUWiZ0rgkzisgfbLQ".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
+Connection: keep-alive.
+.
+{"response":"me"}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 31.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SET name grokking"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 22.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"GET name"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 23.
+ETag: W/"17-r64RbawEy3VlhfxH17eacQ".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"grokking"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
+Content-Length: 22.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"DEL name"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-DiFmUvZ58pv8NHtOrmrv6g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
+Connection: keep-alive.
+.
+{"response":1}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 31.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SET name grokking"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 31.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SET name grokking"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 34.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SET name engineering"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 22.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"GET name"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 26.
+ETag: W/"1a-ijozCQ2bGNyVM6QTXumlaA".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"engineering"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
+Content-Length: 26.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"GET notfound"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-oLIwHuz6Cab8Kew/Wm/uAg".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
+Connection: keep-alive.
+.
+{"response":null}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
-Content-Length: 21.
+User-Agent: Go-http-client/1.1.
+Content-Length: 35.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
-{"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+{"command":"RPUSH programmers huy"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-DiFmUvZ58pv8NHtOrmrv6g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":1}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
-Content-Length: 21.
-Accept-Encoding: gzip.
-.
-{"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
-Connection: keep-alive.
-.
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
-
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
-POST /ledis HTTP/1.1.
-Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 52.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"RPUSH programmers loc khiem minh khanh"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-OzXBLVti2Yg/obwrDokc0w".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":4}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
+Content-Length: 21.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"FLUSHDB"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
+Connection: keep-alive.
+.
+{"response":"OK"}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
+Content-Length: 32.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"SET programmers me"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
+Connection: keep-alive.
+.
+{"response":"OK"}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
+Content-Length: 35.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"RPUSH programmers huy"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-3e5u3gm5faotT1pPLHjl5w".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
+Connection: keep-alive.
+.
+{"response":0}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
+Content-Length: 21.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"FLUSHDB"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
+Connection: keep-alive.
+.
+{"response":"OK"}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
+Content-Length: 52.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"RPUSH programmers loc khiem minh khanh"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-OzXBLVti2Yg/obwrDokc0w".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
+Connection: keep-alive.
+.
+{"response":4}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
 Content-Length: 30.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"LPOP programmers"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 18.
+ETag: W/"12-6TTJX1oAWSTw68U7rNoh8g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"loc"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
+Content-Length: 36.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"LRANGE programmers 0 2"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 37.
+ETag: W/"25-pAnQV/cReeb5frqIkvsOTw".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
+Connection: keep-alive.
+.
+{"response":["khiem","minh","khanh"]}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 27.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"LPOP notfound"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-oLIwHuz6Cab8Kew/Wm/uAg".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":null}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
+Content-Length: 52.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"RPUSH programmers loc khiem minh khanh"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-OzXBLVti2Yg/obwrDokc0w".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
+Connection: keep-alive.
+.
+{"response":4}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
+Content-Length: 30.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"RPOP programmers"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 20.
+ETag: W/"14-qyXYxNcQtFqy5TckHwWUlQ".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
+Connection: keep-alive.
+.
+{"response":"khanh"}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
+Content-Length: 36.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"LRANGE programmers 0 2"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 35.
+ETag: W/"23-jxg/lNoVrmExnm5rhN3TKg".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
+Connection: keep-alive.
+.
+{"response":["loc","khiem","minh"]}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
+Content-Length: 27.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"RPOP notfound"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-oLIwHuz6Cab8Kew/Wm/uAg".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
+Connection: keep-alive.
+.
+{"response":null}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 59.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"RPUSH languages ruby python c cpp golang java"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-VG/Jq3U6Mtm0rx+cefqOdg".
+Date: Wed, 09 Dec 2015 03:08:33 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":6}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 34.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"LRANGE languages 0 1"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 30.
+ETag: W/"1e-vWec0mQ9Fe49PVk08ZQkcQ".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":["ruby","python"]}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
-Content-Length: 21.
-Accept-Encoding: gzip.
-.
-{"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
-Connection: keep-alive.
-.
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
-
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
-POST /ledis HTTP/1.1.
-Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
-Content-Length: 33.
-Accept-Encoding: gzip.
-.
-{"command":"LRANGE notfound 0 1"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
-Connection: keep-alive.
-.
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
-
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
-POST /ledis HTTP/1.1.
-Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
-Content-Length: 21.
-Accept-Encoding: gzip.
-.
-{"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
-Connection: keep-alive.
-.
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
-
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
-POST /ledis HTTP/1.1.
-Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 34.
-Accept-Encoding: gzip.
-.
-{"command":"RPUSH languages ruby"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
-Connection: keep-alive.
-.
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
-
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
-POST /ledis HTTP/1.1.
-Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
-Content-Length: 34.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"LRANGE languages 2 4"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 33.
+ETag: W/"21-HNeIWaWzZG+sOuZ3ROpSxQ".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":["c","cpp","golang"]}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
+Content-Length: 33.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"LRANGE notfound 0 1"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-oLIwHuz6Cab8Kew/Wm/uAg".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
+Connection: keep-alive.
+.
+{"response":null}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
+Content-Length: 34.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"RPUSH languages ruby"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-DiFmUvZ58pv8NHtOrmrv6g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
+Connection: keep-alive.
+.
+{"response":1}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
+Content-Length: 34.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"LRANGE languages 2 4"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 15.
+ETag: W/"f-lmQWqEkPiLfWIyVIoaZ8kQ".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
+Connection: keep-alive.
+.
+{"response":[]}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
+Content-Length: 21.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"FLUSHDB"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
+Connection: keep-alive.
+.
+{"response":"OK"}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
+Content-Length: 52.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"RPUSH programmers loc khiem minh khanh"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-OzXBLVti2Yg/obwrDokc0w".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
+Connection: keep-alive.
+.
+{"response":4}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
+Content-Length: 30.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"LLEN programmers"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-OzXBLVti2Yg/obwrDokc0w".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
+Connection: keep-alive.
+.
+{"response":4}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
+Content-Length: 21.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"FLUSHDB"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
+Connection: keep-alive.
+.
+{"response":"OK"}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
 Content-Length: 27.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"LLEN notfound"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-3e5u3gm5faotT1pPLHjl5w".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":0}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 46.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SADD asean vietnam lao campuchea"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-nKci9fiQdyyC+LVjaxg66g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":3}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 29.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SET asean asean"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 46.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SADD asean vietnam lao campuchea"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-3e5u3gm5faotT1pPLHjl5w".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":0}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 34.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SADD myset a b c d e"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-/yhNieoSvnDWOCAD0MY7Dw".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":5}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 28.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SREM myset a b"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-W/EfEvIf8p82zwjbmYvZpw".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":2}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 32.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SADD myset a b c d"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-OzXBLVti2Yg/obwrDokc0w".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":4}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 25.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SCARD myset"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-OzXBLVti2Yg/obwrDokc0w".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":4}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 34.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"RPUSH mylist a b c d"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
-Connection: keep-alive.
-.
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
+Content-Length: 34.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"RPUSH mylist a b c d"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-OzXBLVti2Yg/obwrDokc0w".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
+Connection: keep-alive.
+.
+{"response":4}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
 Content-Length: 26.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SCARD mylist"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-OzXBLVti2Yg/obwrDokc0w".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":4}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 35.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SADD myseta a b c d e"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-/yhNieoSvnDWOCAD0MY7Dw".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":5}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 31.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SADD mysetb a b c"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-nKci9fiQdyyC+LVjaxg66g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":3}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 27.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SADD mysetc a"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-DiFmUvZ58pv8NHtOrmrv6g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":1}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 41.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SINTER myseta mysetb mysetc"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 19.
+ETag: W/"13-puLqAn05D13qdeFY3x5BBQ".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"ECOM"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 34.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SADD myset a b c d e"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-/yhNieoSvnDWOCAD0MY7Dw".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":5}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 28.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SMEMBERS myset"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 34.
+ETag: W/"22-qtXWKkXn41BRYsCAGpk0Eg".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":["a","b","c","d","e"]}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 34.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SADD myset a b c d e"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-/yhNieoSvnDWOCAD0MY7Dw".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":5}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 28.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SREM myset a b"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-W/EfEvIf8p82zwjbmYvZpw".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":2}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 28.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SMEMBERS myset"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 26.
+ETag: W/"1a-U6MPuZsqKrL3VnY+hmMriA".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":["c","d","e"]}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 31.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SET name grokking"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 47.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"RPUSH colors green blue red white"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-OzXBLVti2Yg/obwrDokc0w".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":4}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 54.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SADD countries vietnam singapore vietnam"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 14.
+ETag: W/"e-W/EfEvIf8p82zwjbmYvZpw".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":2}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 18.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"SAVE"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"FLUSHDB"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 21.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"RESTORE"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 17.
+ETag: W/"11-WxAxR0tB5Ik0hw/zHl8z7g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"OK"}
 
-#
-T 172.16.42.18:43707 -> 128.199.179.49:80 [AP]
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
 POST /ledis HTTP/1.1.
 Host: 128.199.179.49:80.
-User-Agent: Go 1.1 package http.
+User-Agent: Go-http-client/1.1.
 Content-Length: 22.
+Content-Type: application/json.
 Accept-Encoding: gzip.
 .
 {"command":"GET name"}
-#
-T 128.199.179.49:80 -> 172.16.42.18:43707 [AP]
-HTTP/1.1 500 Internal Server Error.
-X-Content-Type-Options: nosniff.
-Content-Type: text/html; charset=utf-8.
-Content-Length: 1080.
-Date: Tue, 08 Dec 2015 06:45:41 GMT.
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 23.
+ETag: W/"17-r64RbawEy3VlhfxH17eacQ".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
 Connection: keep-alive.
 .
-TypeError: Cannot read property &#39;trim&#39; of undefined<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:27:40<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:131:13)<br> &nbsp; &nbsp;at Route.dispatch (/root/www/grokking-ledis/node_modules/express/lib/router/route.js:112:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/node_modules/express/lib/router/index.js:277:22<br> &nbsp; &nbsp;at Function.process_params (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:330:12)<br> &nbsp; &nbsp;at next (/root/www/grokking-ledis/node_modules/express/lib/router/index.js:271:10)<br> &nbsp; &nbsp;at /root/www/grokking-ledis/server.js:12:3<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/root/www/grokking-ledis/node_modules/express/lib/router/layer.js:95:5)
+{"response":"grokking"}
 
-####exit
-153 received, 0 dropped
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
+Content-Length: 31.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"LRANGE colors 0 3"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 43.
+ETag: W/"2b-iFc4t1Uuc2XCSW1xZ1qZ+g".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
+Connection: keep-alive.
+.
+{"response":["green","blue","red","white"]}
+
+T 192.168.2.109:58143 -> 128.199.179.49:80 [AP]
+POST /ledis HTTP/1.1.
+Host: 128.199.179.49:80.
+User-Agent: Go-http-client/1.1.
+Content-Length: 32.
+Content-Type: application/json.
+Accept-Encoding: gzip.
+.
+{"command":"SMEMBERS countries"}
+
+T 128.199.179.49:80 -> 192.168.2.109:58143 [AP]
+HTTP/1.1 200 OK.
+Content-Type: application/json; charset=utf-8.
+Content-Length: 36.
+ETag: W/"24-XLDij5jW2gtz8QDLy6+yjQ".
+Date: Wed, 09 Dec 2015 03:08:34 GMT.
+Connection: keep-alive.
+.
+{"response":["vietnam","singapore"]}
